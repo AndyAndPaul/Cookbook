@@ -4,7 +4,7 @@
 
   Last edited
     by pavasich
-    on 1/4/2016
+    on 1/5/2016
 
   TODO:
     add functionality to routes
@@ -14,7 +14,7 @@
 
 var express = require('express'),
     router  = express.Router(),
-    model   = require('../models/cookbook');
+    model   = require('../models/Cookbook');
 
 router
 .post('/', function(req, res) {

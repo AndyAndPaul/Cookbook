@@ -23,7 +23,7 @@ var app = express();
 
 app
 .set('views', path.join(__dirname, 'views'))
-.set('view engine', 'ejs')
+.set('view engine', 'hbs')
 
 .use(express.static('public'))
 
