@@ -1,22 +1,21 @@
-*,
-body,
-div,
-header,
-footer,
-section,
-article {
+@content-width: 800px;
+
+*, body, div, header, footer, section, article {
   box-sizing: border-box;
   margin: 0;
 }
+
 .full-width {
   width: 100%;
   padding: 1em;
   overflow: hidden;
   clear: both;
 }
+
 .text-right {
   text-align: right;
 }
+
 header {
   width: 100%;
   position: fixed;
@@ -25,6 +24,7 @@ header {
   height: 130px;
   background: rgba(255, 255, 255, 0.95);
 }
+
 .main-navigation {
   display: none;
   position: fixed;
@@ -34,90 +34,104 @@ header {
   z-index: 99;
   background: #FFF;
 }
+
 .main-navigation li {
   padding: 1em;
   border-top: 1px solid #EFEFEF;
 }
-.menu-icon,
-.search {
+
+.menu-icon, .search {
   float: left;
   width: 25%;
   font-size: 1.5em;
   margin-top: 0.125em;
 }
-.fa-search,
-.fa-bars {
+
+.fa-search, .fa-bars {
   cursor: pointer;
 }
+
 .search-bar {
   display: none;
   width: 75%;
   float: left;
 }
+
 .search-bar input {
   width: 100%;
   padding: 0.25em;
   border: 1px solid #666;
   border-radius: 5px;
 }
+
 .site-title {
   width: 50%;
   float: left;
   text-align: center;
 }
+
 .site-title h1 {
   font-family: 'Poiret One', cursive;
   margin: 0;
 }
+
 .site-title-bar {
   overflow: hidden;
   height: 70px;
 }
+
 .page-title-bar {
   background: #EFEFEF;
 }
+
 .page-title-bar h2 {
   font-weight: 400;
   text-align: center;
 }
+
 .search .fa {
   float: right;
 }
+
 .main {
   margin-top: 130px;
 }
+
 .recipe {
   margin: 0 auto 3em;
-  max-width: 800px;
+  max-width: @content-width;
 }
+
 .featured-image {
   width: 100%;
   margin: 0 auto;
 }
-.main h3,
-.main h4,
-.main li,
-.main p,
-.main .column-wrapper {
+
+.main h3, .main h4, .main li, .main p, .main .column-wrapper {
   margin-top: 0.5em;
 }
+
 .column-wrapper {
   overflow: hidden;
 }
-.left-element,
-.right-element {
+
+.left-element, .right-element {
   width: 50%;
 }
+
 .left-element {
   float: left;
 }
+
 .right-element {
   float: right;
 }
+
 ul {
   margin: 0;
   padding: 0 0 0 20px;
 }
+
 li {
   list-style: none;
   margin: 0;
