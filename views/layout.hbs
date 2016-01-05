@@ -7,12 +7,49 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   </head>
-
   <body>
-    {{{body}}}
+    <div class="body-wrapper">
+      <header>
+        <div class="site-title-bar full-width">
+          <div class="search-bar" id="search-bar">
+            <input type="text" name="search" id="search" placeholder="Search your cookbook">
+          </div>
+          <div id="site-title-bar-content">
+            <div class="menu-icon">
+              <i class="fa fa-bars" id="menu-icon"></i>
+            </div>
+            <div class="site-title">
+              <h1>Cookbook</h1>
+            </div>
+          </div>
+          <div class="search">
+            <i class="fa fa-search" id="search-icon"></i>
+          </div>
+        </div>
+        <div class="page-title-bar full-width">
+          <h2>Our Family Cookbook</h2>
+        </div>
+      </header>
+      <nav class="main-navigation" id="main-navigation">
+        <li>Invite to this Cookbook</li>
+        <li>My Cookbooks</li>
+        <li>Account</li>
+        <li>Log Out</li>
+      </nav>
+      <section class="main full-width">
+        {{{body}}}
+      </section>
+
+      <footer>
+
+      </footer>
+
+    </div>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/underscore.js"></script>
+    <script src="/js/backbone.js"></script>
+    <script src="/js/animations.js"></script>
   </body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-  <script src="/js/animations.js"></script>
-  
 </html>
