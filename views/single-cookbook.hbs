@@ -10,7 +10,9 @@
 </script>
 <script type="text/template" id="recipe-template">
   <article class="recipe">
-    <img src="<%= img %>" alt="Cake!" class="featured-image">
+    <!-- <% if(img) { %>
+      <img src="<%= img %>" alt="Cake!" class="featured-image">
+    <% } %> -->
     <h3>Recipe name</h3>
     <div class="column-wrapper">
       <div class="left-element"><strong>Prep Time: </strong> <%= prepTime %> minutes</div>
@@ -19,14 +21,16 @@
     <h4>Ingredents</h4>
     <ul>
       <% for( var i = 0; i < ingredients.length; i++ ) { %>
-        <li><%= ingredients[i] %>
+        <li><%= ingredients[i] %></li>
       <% } %>
     </ul>
     <h4>Cooking instructions</h4>
     <ul>
       <% for( var i = 0; i < instructions.length; i++ ) { %>
-        <li><%= instructions[i] %>
+        <li><%= instructions[i] %></li>
       <% } %>
     </ul>
   </article>
 </script>
+<script src="/js/views/single-cookbook.js"></script>
+<script src="/js/models/single-cookbook.js"></script>
