@@ -91,9 +91,6 @@ app.ModelView = Backbone.View.extend({
   initialize: function() {
     var self = this;
     console.log(this);
-    if(!this.model.image) {
-      this.model.image = '/img/cake.jpg';
-    }
     console.log('Model view dynamically generated.');
     this.deleteButton = document.createElement('button');
     this.deleteButton.innerHTML = 'Delete recipe'
