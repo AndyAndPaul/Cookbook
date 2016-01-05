@@ -1,0 +1,25 @@
+<div id="recipes-container">
+
+</div>
+<script type="text/template" id="recipe-template">
+  <article class="recipe">
+    <img src="<%= img %>" alt="Cake!" class="featured-image">
+    <h3>Recipe name</h3>
+    <div class="column-wrapper">
+      <div class="left-element"><strong>Prep Time: </strong> <%= prepTime %> minutes</div>
+      <div class="right-element"><strong>Cook Time: </strong> <%= cookTime %> minutes</div>
+    </div>
+    <h4>Ingredents</h4>
+    <ul>
+      <% for( var i = 0; i < ingredients.length; i++ ) { %>
+        <li><%= ingredients[i] %>
+      <% } %>
+    </ul>
+    <h4>Cooking instructions</h4>
+    <ul>
+      <% for( var i = 0; i < instructions.length; i++ ) { %>
+        <li><%= instructions[i] %>
+      <% } %>
+    </ul>
+  </article>
+</script>

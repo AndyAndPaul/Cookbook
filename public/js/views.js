@@ -50,7 +50,7 @@ app.addRecipeView = Backbone.View.extend({
 });
 
 app.CollectionView = Backbone.View.extend({
-  el: $('#pancake-container'),
+  el: $('#recipes-container'),
   initialize: function() {
     console.log('Collection view initialized');
     this.$el.html('');
@@ -80,7 +80,7 @@ app.ModelView = Backbone.View.extend({
     var self = this;
     console.log('Model view dynamically generated.');
     this.deleteButton = document.createElement('button');
-    this.deleteButton.innerHTML = 'Delete pancake'
+    this.deleteButton.innerHTML = 'Delete recipe'
     this.deleteButton.className = 'remove';
     this.render();
   },

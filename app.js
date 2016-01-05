@@ -8,8 +8,11 @@
 
   TODO:
     add routes as we need to
-    switch from ejs to hbs
 */
+
+// declare passport and set up local strategy
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 require('./db/database');
 
 var express    = require('express'),
@@ -18,8 +21,24 @@ var express    = require('express'),
 
 var home = require('./routes/home');
 var api  = require('./routes/api');
+var accounts = require('./routes/account');
 
 var app = express();
+
+// set up express sessions
+app.use(require('express-session')({
+  secret: 'tom loves tommy',
+  resave: false,
+  saveUnitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// configure passport
+var Account = require('./models/Account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 app
 .set('views', path.join(__dirname, 'views'))
@@ -31,7 +50,8 @@ app
 .use(bodyParser.urlencoded({ extended: false }))
 
 .use('/', home)
-.use('/api', api);
+.use('/api', api)
+.use('/account', accounts);
 
 var server = app.listen(3737, function() {
   var host = server.address().address;
