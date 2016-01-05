@@ -39,10 +39,14 @@ router.post('/register', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('login', {
-    title: 'Login',
-    user: req.user
-  });
+  if(req.user) {
+    res.redirect('/');
+  } else {
+    res.render('login', {
+      title: 'Login',
+      user: req.user
+    });
+  }
 });
 
 router.post('/login',

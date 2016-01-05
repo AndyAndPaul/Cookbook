@@ -5,6 +5,16 @@
   margin: 0;
 }
 
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
 .full-width {
   width: 100%;
   padding: 1em;
@@ -80,13 +90,18 @@ header {
   height: 70px;
 }
 
-.page-title-bar {
+.page-title-bar.full-width {
   background: #EFEFEF;
+  padding: 0.5em 1em;
 }
 
 .page-title-bar h2 {
   font-weight: 400;
-  text-align: center;
+  text-align: left;
+}
+
+.page-title-bar p {
+  margin-top: 0.3em;
 }
 
 .search .fa {
