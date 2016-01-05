@@ -14,14 +14,19 @@
 
       <header>
         <div class="site-title-bar full-width">
-          <nav>
-            <i class="fa fa-bars"></i>
-          </nav>
-          <div class="site-title">
-            <h1>Cookbook</h1>
+          <div class="search-bar" id="search-bar">
+            <input type="text" name="search" id="search" placeholder="Search your cookbook">
+          </div>
+          <div id="site-title-bar-content">
+            <nav>
+              <i class="fa fa-bars"></i>
+            </nav>
+            <div class="site-title">
+              <h1>Cookbook</h1>
+            </div>
           </div>
           <div class="search">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search" id="search-icon"></i>
           </div>
         </div>
         <div class="page-title-bar full-width">
@@ -43,6 +48,7 @@
       </footer>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="animations.js"></script>
   </body>
 </html>

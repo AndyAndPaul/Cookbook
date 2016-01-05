@@ -25,6 +25,19 @@ header {
   margin-top: 0.125em;
 }
 
+.search-bar {
+  display: none;
+  width: 75%;
+  float: left;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.25em;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
 .site-title {
   width: 50%;
   float: left;
@@ -38,6 +51,7 @@ header {
 
 .site-title-bar {
   overflow: hidden;
+  height: 70px;
 }
 
 .page-title-bar {
