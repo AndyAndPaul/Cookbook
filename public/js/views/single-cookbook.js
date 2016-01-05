@@ -70,8 +70,8 @@ app.CollectionView = Backbone.View.extend({
   render: function() {
     var that = this;
     console.log('collection view rendering');
-    var models = this.collection.models;
-    console.log(this.collection.models);
+    console.log(this.collection);
+    var models = this.collection.models[0].attributes.recipes;
     models.forEach(function(m) {
       new app.ModelView({
         model: m,
@@ -90,6 +90,10 @@ app.ModelView = Backbone.View.extend({
   },
   initialize: function() {
     var self = this;
+    console.log(this);
+    if(!this.model.image) {
+      this.model.image = '/img/cake.jpg';
+    }
     console.log('Model view dynamically generated.');
     this.deleteButton = document.createElement('button');
     this.deleteButton.innerHTML = 'Delete recipe'
@@ -97,7 +101,7 @@ app.ModelView = Backbone.View.extend({
     this.render();
   },
   render: function() {
-    var html = _.template($('#recipe-template').html())(this.model.attributes);
+    var html = _.template($('#recipe-template').html())(this.model);
     this.$el.append(html);
     this.$el.append(this.deleteButton);
   }
