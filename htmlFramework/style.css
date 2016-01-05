@@ -6,7 +6,12 @@
 .full-width {
   width: 100%;
   padding: 1em;
+  overflow: hidden;
   clear: both;
+}
+
+.text-right {
+  text-align: right;
 }
 
 header {
@@ -69,4 +74,45 @@ header {
 
 .main {
   margin-top: 130px;
+}
+
+.recipe {
+  margin: 0 auto 3em;
+  max-width: 800px;
+}
+
+.featured-image {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main h3, .main h4, .main li, .main p, .main .column-wrapper {
+  margin-top: 0.5em;
+}
+
+.column-wrapper {
+  overflow: hidden;
+}
+
+.left-element, .right-element {
+  width: 50%;
+}
+
+.left-element {
+  float: left;
+}
+
+.right-element {
+  float: right;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
