@@ -26,11 +26,21 @@
             <i class="fa fa-search" id="search-icon"></i>
           </div>
         </div>
-        {{#if title}}
+
           <div class="page-title-bar full-width">
-            <h2>{{title}}</h2>
+            <div class="quarter-left">
+              {{#if title}}
+                <h2>{{title}}</h2>
+              {{/if}}
+            </div>
+            <div class="three-quarter-right">
+              {{#if user}}
+                Welcome, {{user.username}}
+              {{else}}
+                <a href='/account/login'>Log in</a> &vert; <a href='/account/register'>Register</a>
+              {{/if}}
+            </div>
           </div>
-        {{/if}}
       </header>
       <nav class="main-navigation" id="main-navigation">
         <li>Invite to this Cookbook</li>
