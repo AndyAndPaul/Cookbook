@@ -1,0 +1,58 @@
+*, body, div, header, footer, section, article {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.full-width {
+  width: 100%;
+  padding: 1em;
+  clear: both;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 130px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.site-title-bar nav, .search {
+  float: left;
+  width: 25%;
+  font-size: 1.5em;
+  margin-top: 0.125em;
+}
+
+.site-title {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.site-title h1 {
+  font-family: 'Poiret One', cursive;
+  margin: 0;
+}
+
+.site-title-bar {
+  overflow: hidden;
+}
+
+.page-title-bar {
+  background: #EFEFEF;
+}
+
+.page-title-bar h2 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.search .fa {
+  float: right;
+}
+
+.main {
+  margin-top: 130px;
+}
