@@ -8,17 +8,30 @@
 
   TODO:
     add functionality to routes
-    recipe model
     render all pretty
 */
 
 var express = require('express'),
     router  = express.Router(),
-    model   = require('../models/Cookbook');
+    exp   = require('../models/Cookbook');
+var model  = exp.Cookbook,
+    Recipe = exp.Recipe;
 
 router
 .post('/', function(req, res) {
   console.log("post /api");
+})
+
+.post('/recipe', function(req, res) {
+  console.log("post /api/recipe");
+  // model.findById("568c15b6ffe578dd09aef417", function(err, cookbook) {
+  //   Recipe.create(req.body, function(err, recipe) {
+  //     if (err) console.log(err);
+  //     cookbook.recipes.push(recipe)
+  //     cookbook.save();
+  //   })
+  //   res.json(cookbook);
+  // })
 })
 
 .get("/", function(req, res) {
@@ -48,6 +61,13 @@ router
   model.findByIdAndUpdate(req.params.id, req.body, function(err, cookbook) {
     if (err) console.log(err)
     res.json(cookbook)
+  })
+})
+.delete("/:id", function(req, res) {
+  console.log("delete /api/"+req.params.id);
+  model.findByIdAndRemove(req.params.id, function(err, something) {
+    if (err) console.log(err)
+    res.json(something);
   })
 })
 
