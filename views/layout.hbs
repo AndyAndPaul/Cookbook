@@ -26,9 +26,11 @@
             <i class="fa fa-search" id="search-icon"></i>
           </div>
         </div>
-        <div class="page-title-bar full-width">
-          <h2>Our Family Cookbook</h2>
-        </div>
+        {{#if title}}
+          <div class="page-title-bar full-width">
+            <h2>{{title}}</h2>
+          </div>
+        {{/if}}
       </header>
       <nav class="main-navigation" id="main-navigation">
         <li>Invite to this Cookbook</li>
