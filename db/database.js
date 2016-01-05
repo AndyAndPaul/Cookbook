@@ -1,7 +1,16 @@
 /*
+  Cookbook/db/database.js
+    database config
 
-Make sure you execute this command first
-  mongoimport --db cookbook_db --collection cookbooks --file db/dummyData.json --jsonArray
+  Last edited
+    by pavasich
+    on 1/4/2016
+
+  TODO:
+    ???
+
+  Import dummyData
+    mongoimport --db cookbook_db --collection cookbooks --file db/dummyData.json --jsonArray
 */
 var mongoose = require('mongoose');
 
