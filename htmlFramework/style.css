@@ -23,11 +23,30 @@ header {
   background: rgba(255, 255, 255, 0.95);
 }
 
-.site-title-bar nav, .search {
+.main-navigation {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #FFF;
+}
+
+.main-navigation li {
+  padding: 1em;
+  border-top: 1px solid #EFEFEF;
+}
+
+.menu-icon, .search {
   float: left;
   width: 25%;
   font-size: 1.5em;
   margin-top: 0.125em;
+}
+
+.fa-search, .fa-bars {
+  cursor: pointer;
 }
 
 .search-bar {
