@@ -20,7 +20,7 @@ var RecipeSchema = new mongoose.Schema({
   ingredients: [String],
   instructions: [String],
   tags: [String],
-  image: String,
+  image: "/img/cake.jpg",
   authors: [String]
 })
 

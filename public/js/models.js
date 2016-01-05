@@ -1,3 +1,15 @@
+/*
+  Cookbook/public/js/models.js
+    Backbone models
+
+  Last edited
+    by pavasich
+    on 1/5/2016
+
+  TODO:
+
+*/
+
 // namespaces
 var app = app || {}; // constructors go here
 var active = active || {}; // instantiated objects go here
@@ -13,8 +25,10 @@ Backbone.Model.idAttribute = "_id";
 app.Collection = Backbone.Collection.extend({
   initialize: function(args) {
     var self = this;
+
+    // set the url before fetching
     this.url = '/api/cookbook/' + args.cookbookId;
-    console.log('Collection');
+
     this.fetch({reset: true});
 
     this.on('sync', function() {

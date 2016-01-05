@@ -1,3 +1,15 @@
+/*
+  Cookbook/public/js/views.js
+    Backbone views
+
+  Last edited
+    by pavasich
+    on 1/5/2016
+
+  TODO:
+
+*/
+
 var app = app || {};
 var active = active || {};
 
