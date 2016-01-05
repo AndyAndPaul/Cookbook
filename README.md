@@ -4,7 +4,7 @@
 ##### DB planning:
 <img src="wireframes/Database_layout.jpg"
      alt="DB planning"
-     style="max-width: 400px;">
+     style="width: 400px;">
 
 ##### Cookbook (inside)
 <img src="wireframes/Cookbook_inside_view.jpg"
