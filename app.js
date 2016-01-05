@@ -25,6 +25,8 @@ app
 .set('views', path.join(__dirname, 'views'))
 .set('view engine', 'ejs')
 
+.use(express.static('public'))
+
 .use(bodyParser.json())
 .use(bodyParser.urlencoded({ extended: false }))
 

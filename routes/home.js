@@ -15,7 +15,7 @@ var express = require('express'),
 router
 .get("/", function(req, res) {
   console.log("get /")
-  res.render('../htmlFrameword/index.html');
+  res.render('index');
 })
 
 module.exports = router;
