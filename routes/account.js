@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 router.get('/register', function(req, res) {
   res.render('register', {
-    title: 'Registration'
+    title: 'Registration',
     user: req.user
   });
 });

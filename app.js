@@ -29,7 +29,7 @@ var app = express();
 app.use(require('express-session')({
   secret: 'tom loves tommy',
   resave: false,
-  saveUnitialized: false
+  saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
