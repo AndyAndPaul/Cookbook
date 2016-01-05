@@ -2,22 +2,36 @@
 <hr>
 ### Wireframes
 ##### DB planning:
-![DB planning](wireframes/Database_layout.jpg)
+<img src="wireframes/Database_layout.jpg"
+     alt="DB planning"
+     style="max-width: 400px;">
 
 ##### Cookbook (inside)
-![Cookbook (inside)](wireframes/Cookbook_inside_view.jpg)
+<img src="wireframes/Cookbook_inside_view.jpg"
+     alt="Cookbook (inside)"
+     style="max-width: 400px;">
 
 ##### Cookbook (list view)
-![Cookbook (list view)](wireframes/Cookbook_list.jpg)
+<img src="wireframes/Cookbook_list.jpg"
+     alt="Cookbook (list view)"
+     style="max-width: 400px;">
 
 ##### Hamburger menu prototyping
-![Hamburger menu](wireframes/Hamburger_menu.jpg)
+<img src="wireframes/Hamburger_menu.jpg"
+     alt="Hamburger menu"
+     style="max-width: 400px;">
 
 ##### Recipe view
-![Recipe view](wireframes/Recipe_view.jpg)
+<img src="wireframes/Recipe_view.jpg"
+     alt="Recipe view"
+     style="max-width:400px;">
 
 ##### Local recipe search
-![Local recipe search](wireframes/Local_recipe_search.jpg)
+<img src="wireframes/Local_recipe_search.jpg"
+     alt="Local recipe search"
+     style="max-width:400px;">
 
 ##### Global recipe search
-![Global recipe search](wireframes/Global_recpie_search.jpg)
+<img src="wireframes/Global_recpie_search.jpg"
+     alt="Global recipe search"
+     style="max-width:400px;">
