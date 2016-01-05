@@ -3,4 +3,7 @@ $(document).ready( function() {
     $('#site-title-bar-content').toggle();
     $('#search-bar').toggle();
   });
+  $('#menu-icon').on('click', function() {
+    $('#main-navigation').toggle();
+  });
 })
