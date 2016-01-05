@@ -4,12 +4,12 @@
 
   Last edited
     by pavasich
-    on 1/4/2016
+    on 1/5/2016
 
   TODO:
     ???
 
-  Import dummyData
+  Import dummy data
     mongoimport --db cookbook_db --collection cookbooks --file db/dummyData.json --jsonArray
 */
 var mongoose = require('mongoose');

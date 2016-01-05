@@ -1,6 +1,7 @@
 /*
   Cookbook/models/Cookbook.js
     Schema for the "cookbooks" collection
+    Schema for the "recipes" collection
 
   Last edited
     by pavasich
@@ -10,9 +11,17 @@
     ???
 */
 
-var RecipeSchema = require('./Recipe');
-
 var mongoose = require('mongoose');
+
+var RecipeSchema = new mongoose.Schema({
+  name: String,
+  prepTime: Number,
+  cookTime: Number,
+  ingredients: [String],
+  instructions: [String],
+  tags: [String],
+  authors: [String]
+})
 
 var CookbookSchema = new mongoose.Schema({
   name: String,
@@ -20,4 +29,5 @@ var CookbookSchema = new mongoose.Schema({
   recipes: [RecipeSchema]
 })
 
-module.exports = mongoose.model("Cookbook", CookbookSchema, "cookbooks");
+module.exports.Cookbook = mongoose.model("Cookbook", CookbookSchema, "cookbooks");
+module.exports.Recipe = mongoose.model("Recipe", RecipeSchema);
