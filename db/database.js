@@ -7,7 +7,6 @@
     on 1/5/2016
 
   TODO:
-    ???
 
   Import dummy data
     mongoimport --db cookbook_db --collection cookbooks --file db/dummyData.json --jsonArray

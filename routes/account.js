@@ -1,3 +1,15 @@
+/*
+  Cookbook/routes/account.js
+    routes for accounts/users
+
+  Last edited
+    by andy-j-d
+    on 1/5/2016
+
+  TODO:
+
+*/
+
 // account router
 var express = require('express');
 var passport = require('passport');

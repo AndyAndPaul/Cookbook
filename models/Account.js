@@ -1,3 +1,15 @@
+/*
+  Cookbook/models/Account.js
+    Schema for the "Accounts" collection
+
+  Last edited
+    by andy-j-d
+    on 1/5/2016
+
+  TODO:
+    ???
+*/
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');

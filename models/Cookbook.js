@@ -1,7 +1,7 @@
 /*
   Cookbook/models/Cookbook.js
     Schema for the "cookbooks" collection
-    Schema for the "recipes" collection
+    Schema for the "recipes" collection?
 
   Last edited
     by pavasich
