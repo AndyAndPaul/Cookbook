@@ -15,7 +15,7 @@ var express = require('express'),
 router
 .get("/", function(req, res) {
   console.log("get /")
-  res.render('index');
+  res.render('');
 })
 
 module.exports = router;

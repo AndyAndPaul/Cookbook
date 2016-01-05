@@ -18,8 +18,8 @@
   "homepage": "https://github.com/AndyAndPaul/Cookbook#readme",
   "devDependencies": {
     "body-parser": "^1.14.2",
-    "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "hbs": "^4.0.0",
     "mongoose": "^4.3.4"
   },
   "dependencies": {
