@@ -3,11 +3,11 @@
     the one and only app.js
 
   Last edited
-    by pavasich
-    on 1/4/2016
+    by andy-j-d
+    on 1/5/2016
 
   TODO:
-    add routes as we need to
+
 */
 
 // declare passport and set up local strategy
