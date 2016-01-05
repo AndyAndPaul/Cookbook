@@ -2,7 +2,7 @@
     The wrapper for every page within this app.
     Here we load in our resources, set the page title,
     and wrap/render the body }}
-    
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -35,9 +35,7 @@
 
           <div class="page-title-bar full-width">
             <div class="quarter-left">
-              {{#if title}}
-                <h2>{{title}}</h2>
-              {{/if}}
+              <h2 id="page-title">{{title}}</h2>
             </div>
             <div class="three-quarter-right text-right">
               <p>
