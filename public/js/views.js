@@ -9,15 +9,14 @@ app.addRecipeView = Backbone.View.extend({
   },
   addRecipe: function() {
     console.log(this);
-    var confirmation = confirm('Do you want to save your recipe?');
     if(confirmation) {
       var data = {
-        ingredients: $('#p-ingredients').val(),
-        type: $('#p-type').val(),
-        topping: $('#p-topping').val(),
-        syrup: $('#p-syrup').val(),
-        instructions: $('#p-instructions').val(),
-        time: $('#p-time').val(),
+        // ingredients: $('#p-ingredients').val(),
+        // type: $('#p-type').val(),
+        // topping: $('#p-topping').val(),
+        // syrup: $('#p-syrup').val(),
+        // instructions: $('#p-instructions').val(),
+        // time: $('#p-time').val()
       };
       this.collection.create(data);
       this.$el.children('input').val('');

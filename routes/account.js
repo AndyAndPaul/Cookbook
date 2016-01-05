@@ -68,7 +68,6 @@ router.post('/login',
   }
 );
 
-
 router.get('/leave', function(req, res) {
   req.logout();
   res.redirect('/');
