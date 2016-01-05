@@ -20,5 +20,9 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "mongoose": "^4.3.4"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "less": "^2.5.3"
   }
 }
