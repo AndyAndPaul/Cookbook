@@ -143,3 +143,11 @@ li {
   margin: 0;
   padding: 0;
 }
+.main-form input,
+.main-form button {
+  display: block;
+  margin: 0 auto 1em;
+  width: 100%;
+  max-width: 800px;
+  padding: 1em;
+}

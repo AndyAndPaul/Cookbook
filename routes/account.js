@@ -29,10 +29,14 @@ router.get('/', function(req, res) {
 });
 
 router.get('/register', function(req, res) {
-  res.render('register', {
-    title: 'Registration',
-    user: req.user
-  });
+  if(req.user) {
+    res.redirect('/');
+  } else {
+    res.render('register', {
+      title: 'Registration',
+      user: req.user
+    });
+  }
 });
 
 router.post('/register', function(req, res) {
@@ -62,7 +66,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { failureRedirect: '/account/login' }),
   function(req, res) {
     res.redirect('/');
   }

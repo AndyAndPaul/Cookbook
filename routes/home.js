@@ -21,4 +21,13 @@ router
   });
 })
 
+.get("/cookbook/:id", function(req, res) {
+  console.log(req.params.id);
+  res.render('single-cookbook', {
+    user: req.user,
+    cookbookId: req.params.id,
+    title: ''
+  });
+}
+
 module.exports = router;
