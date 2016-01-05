@@ -28,6 +28,6 @@ router
     cookbookId: req.params.id,
     title: ''
   });
-}
+})
 
 module.exports = router;

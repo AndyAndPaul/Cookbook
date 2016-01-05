@@ -11,11 +11,12 @@ app.Model = Backbone.Model.extend({
 Backbone.Model.idAttribute = "_id";
 
 app.Collection = Backbone.Collection.extend({
-  initialize: function() {
+  initialize: function(args) {
     var self = this;
+    this.url = '/api/cookbook/' + args.cookbookId;
     console.log('Collection');
     this.fetch({reset: true});
-    this.cookbookId = cookbookId;
+
     this.on('sync', function() {
       console.log('sync event');
       var view = new app.CollectionView({
@@ -29,15 +30,12 @@ app.Collection = Backbone.Collection.extend({
       });
     });
   },
-  model: app.Model,
-  url: '/api/cookbook/' + this.cookbookId
+  model: app.Model
 });
 
 $(document).ready(function() {
   active.collection = new app.Collection({
     cookbookId: app.cookbookId
   });
-  active.createRecipeView = new app.addRecipeView({
-    collection: active.collection
-  });
+  console.log(active.collection.url)
 });
