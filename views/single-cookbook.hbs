@@ -79,9 +79,13 @@
       </div>
     </div>
     <h4>Instructions</h4>
-    <input type="text" class="add-instruction" placeholder="Step 1"> <i class="fa fa-plus-circle new-instruction"></i>
+    <div id="add-instructions-container">
+      <input type="text" class="add-instruction" placeholder="Step 1"> <i class="fa fa-plus-circle new-instruction"></i>
+    </div>
     <h4>Tags</h4>
-    <input type="text" class="add-tag" placeholder="tag"> <i class="fa fa-plus-circle new-tag"></i>
+    <div id="add-tags-container">
+      <input type="text" class="add-tag" placeholder="tag"> <i class="fa fa-plus-circle new-tag"></i>
+    </div>
     <button id="create-recipe-button" class="create-recipe-button">Create recipe</button>
   </div>
 </script>
@@ -93,6 +97,14 @@
     <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient"></i><br>
     Quantity Unit Ingredient
   </div>
+</script>
+
+<script type="text/template" id="add-instruction-template">
+  <input type="text" class="add-instruction" placeholder="Step 1"> <i class="fa fa-plus-circle new-instruction"></i>
+</script>
+
+<script type="text/template" id="add-tag-template">
+  <input type="text" class="add-tag" placeholder="tag"> <i class="fa fa-plus-circle new-tag"></i>
 </script>
 
 <script src="/js/models/single-cookbook.js"></script>
