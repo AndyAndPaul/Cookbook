@@ -22,16 +22,19 @@ router
   console.log("post /api/cookbook");
 })
 
-.post('/recipe', function(req, res) {
-  console.log("post /api/recipe");
-  // model.findById("568c15b6ffe578dd09aef417", function(err, cookbook) {
-  //   Recipe.create(req.body, function(err, recipe) {
-  //     if (err) console.log(err);
-  //     cookbook.recipes.push(recipe)
-  //     cookbook.save();
-  //   })
-  //   res.json(cookbook);
-  // })
+.post('/cookbook/:id/recipe', function(req, res) {
+  console.log("post /api/cookbook/:id/recipe");
+  model.findById(req.params.id, function(err, cookbook) {
+    Recipe.create(req.body, function(err, recipe) {
+      if (err) {
+        console.log(err);
+      } else {
+        cookbook.recipes.push(recipe)
+        cookbook.save();
+      }
+    })
+    res.json(cookbook);
+  })
 })
 
 .get("/cookbook", function(req, res) {
