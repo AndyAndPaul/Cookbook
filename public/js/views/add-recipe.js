@@ -1,3 +1,14 @@
+/*
+  Cookbook/public/js/views/add-recipes.js
+    Backbone Recipe creation
+
+  Last edited
+    by andy-j-d
+    on 1/6/2016
+
+  TODO:
+
+*/
 var app = app || {};
 var active = active || {};
 

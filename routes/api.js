@@ -14,7 +14,8 @@ var express = require('express'),
     router  = express.Router(),
     exp    = require('../models/Cookbook');
 var model  = exp.Cookbook,
-    Recipe = exp.Recipe;
+    Recipe = exp.Recipe,
+    Account   = require('../models/Account')
 
 router
 
@@ -187,13 +188,29 @@ router
       res.json(cookbook);
     }
   })
-});
+})
 
 /*
                     USER  OPERATIONS
 */
 
 //                                                              GET
-.get('/')
+.get('/user/:userId/cookbooks', function(req, res) {
+  console.log('get /api/user/'+req.params.userId+'/cookbooks');
+  Account.findById(req.params.userId, function(err, account) {
+
+    if (err) res.json(err);
+
+    else {
+      model.find({
+        '_id': { $in: account.cookbooks }
+      },
+      function(err, cookbooks) {
+        if (err) res.json(err);
+        else res.json(cookbooks);
+      })
+    }
+  })
+});
 
 module.exports = router;

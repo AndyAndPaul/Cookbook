@@ -1,10 +1,10 @@
 /*
-  Cookbook/public/js/models.js
+  Cookbook/old/single-cookbook-model.js
     Backbone models
 
   Last edited
     by pavasich
-    on 1/5/2016
+    on 1/6/2016
 
   TODO:
 
