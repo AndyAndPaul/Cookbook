@@ -12,9 +12,9 @@ require('./database');
 var models = require('../models/Cookbook');
 
 models.Cookbook.create({
-    "name": "ADPV Recipes",
-    "recipes": [],
-    "accounts": []
+    'name': 'ADPV Recipes',
+    'recipes': [],
+    'accounts': []
   },
   function(err, cookbook) {
     console.log(cookbook);

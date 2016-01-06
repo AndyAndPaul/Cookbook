@@ -23,8 +23,8 @@ router
 */
 
 //                                                              GET ALL
-.get("/cookbook", function(req, res) {
-  console.log("get /api/cookbook");
+.get('/cookbook', function(req, res) {
+  console.log('get /api/cookbook');
   model.find(function(err, cookbooks) {
 
     if (err) res.json(err)
@@ -35,8 +35,8 @@ router
 })
 
 //                                                              GET ONE
-.get("/cookbook/:id", function(req, res) {
-  console.log("get /api/cookbook/"+req.params.id);
+.get('/cookbook/:id', function(req, res) {
+  console.log('get /api/cookbook/'+req.params.id);
   model.findById(req.params.id, function(err, cookbook) {
 
     if (err) res.json(err);
@@ -48,7 +48,7 @@ router
 
 //                                                              POST
 .post('/cookbook', function(req, res) {
-  console.log("post /api/cookbook");
+  console.log('post /api/cookbook');
   model.create(req.body, function(err, cookbook) {
 
     if (err) res.json(err);
@@ -59,8 +59,8 @@ router
 })
 
 //                                                              PUT/PATCH
-.put("/cookbook/:id", function(req, res) {
-  console.log("put /api/cookbook/"+req.params.id);
+.put('/cookbook/:id', function(req, res) {
+  console.log('put /api/cookbook/'+req.params.id);
   model.findByIdAndUpdate(req.params.id, req.body, function(err, cookbook) {
 
     if (err) res.json(err);
@@ -69,8 +69,8 @@ router
 
   })
 })
-.patch("/cookbook/:id", function(req, res) {
-  console.log("patch /api/cookbook/"+req.params.id);
+.patch('/cookbook/:id', function(req, res) {
+  console.log('patch /api/cookbook/'+req.params.id);
   model.findByIdAndUpdate(req.params.id, req.body, function(err, cookbook) {
 
     if (err) res.json(err);
@@ -81,8 +81,8 @@ router
 })
 
 //                                                              DELETE
-.delete("/cookbook/:id", function(req, res) {
-  console.log("delete /api/cookbook/"+req.params.id);
+.delete('/cookbook/:id', function(req, res) {
+  console.log('delete /api/cookbook/'+req.params.id);
   model.findByIdAndRemove(req.params.id, function(err, something) {
 
     if (err) res.json(err);
@@ -98,8 +98,8 @@ router
 */
 
 //                                                              GET
-.get("/recipe/:cookbookId/:recipeId", function(req, res) {
-  console.log("get /api/recipe/"+
+.get('/recipe/:cookbookId/:recipeId', function(req, res) {
+  console.log('get /api/recipe/'+
               req.params.cookbookId+'/'+
               req.params.recipeId);
   model.findById(req.params.cookbookId, function(err, cookbook) {
@@ -111,8 +111,8 @@ router
   })
 })
 //                                                              GET ALL
-.get("/recipe/:cookbookId", function(req, res) {
-  console.log("get /api/recipe/" + req.params.cookbookId);
+.get('/recipe/:cookbookId', function(req, res) {
+  console.log('get /api/recipe/' + req.params.cookbookId);
 
   model.findById(req.params.cookbookId, function(err, cookbook) {
 
@@ -125,7 +125,7 @@ router
 
 //                                                              POST
 .post('/recipe/:cookbookId', function(req, res) {
-  console.log("post /api/recipe/"+req.params.cookbookId);
+  console.log('post /api/recipe/'+req.params.cookbookId);
   model.findById(req.params.cookbookId, function(err, cookbook) {
     Recipe.create(req.body, function(err, recipe) {
 
@@ -142,7 +142,7 @@ router
 
 //                                                             PUT/PATCH
 .put('/recipe/:cookbookId/:recipeId', function(req, res) {
-  console.log("put /api/recpie/"+
+  console.log('put /api/recpie/'+
               req.params.cookbookId+'/'+
               req.params.recipeId);
   model.findById(req.params.cookbookId, function(err, cookbook) {
@@ -157,7 +157,7 @@ router
   })
 })
 .patch('/recipe/:cookbookId/:recipeId', function(req, res) {
-  console.log("patch /api/recpie/"+
+  console.log('patch /api/recpie/'+
               req.params.cookbookId+'/'+
               req.params.recipeId);
   model.findById(req.params.cookbookId, function(err, cookbook) {
@@ -174,7 +174,7 @@ router
 
 //                                                             DELETE
 .delete('/recipe/:cookbookId/:recipeId', function(req, res) {
-  console.log("delete /api/recpie/"+
+  console.log('delete /api/recpie/'+
               req.params.cookbookId+'/'+
               req.params.recipeId);
   model.findById(req.params.cookbookId, function(err, cookbook) {
@@ -188,5 +188,12 @@ router
     }
   })
 });
+
+/*
+                    USER  OPERATIONS
+*/
+
+//                                                              GET
+.get('/')
 
 module.exports = router;

@@ -13,15 +13,15 @@ var express = require('express'),
     router  = express.Router();
 
 router
-.get("/", function(req, res) {
-  console.log("get /")
+.get('/', function(req, res) {
+  console.log('get /')
   res.render('index', {
     user: req.user,
     title: 'Home'
   });
 })
 
-.get("/cookbook/:id", function(req, res) {
+.get('/cookbook/:id', function(req, res) {
   console.log(req.params.id);
   res.render('single-cookbook', {
     user: req.user,

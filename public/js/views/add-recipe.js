@@ -95,11 +95,11 @@ app.createRecipeView = Backbone.View.extend({
 $(document).ready( function() {
   // display add recipe form when 'add new' button is clicked
   $('#add-recipe-button').on('click', function() {
-    if(!($( "#add-recipe-form" ).length)) { // display the form if it's not already displayed
+    if(!($( '#add-recipe-form' ).length)) { // display the form if it's not already displayed
       var html = _.template($('#add-recipe-template').html());
       $('#recipes-container').prepend(html);
       // scroll to form
-      $('body, html').animate({ scrollTop: $("#add-recipe-form").offset().top -200 }, 1000);
+      $('body, html').animate({ scrollTop: $('#add-recipe-form').offset().top -200 }, 1000);
       // instantiate Bakcbone view for form
       active.createRecipeView = new app.createRecipeView({
         collection: active.recipeList

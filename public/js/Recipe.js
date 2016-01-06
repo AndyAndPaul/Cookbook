@@ -14,13 +14,10 @@
 var app = app || {};
 var active = active || {};
 
-Backbone.Model.idAttribute = "_id";
+Backbone.Model.idAttribute = '_id';
 
 app.Recipe = Backbone.Model.extend({
-  // needs to have a cookbook ID
-  initialize: function() {
-    // this.url = "/api/recipe/" + app.cookbookId + '/' + this.attributes._id;
-  }
+  initialize: function() { }
 })
 
 /*
@@ -29,7 +26,7 @@ app.Recipe = Backbone.Model.extend({
    var recipeView = new app.RecipeView({model: recipe})
 */
 app.RecipeView = Backbone.View.extend({
-  html: "",
+  html: '',
 
   template: _.template($('#recipe-template').html()),
 
@@ -50,8 +47,7 @@ app.RecipeList = Backbone.Collection.extend({
 })
 
 $(document).ready(function() {
-    console.log("doc ready cookbookId: " + app.cookbookId);
   active.recipeList = new app.RecipeList(app.cookbookId);
 
-  console.log("fetched recipe list");
+  console.log('fetched recipe list');
 })
