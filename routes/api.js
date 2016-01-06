@@ -74,4 +74,9 @@ router
   })
 })
 
+// .get("/cookbook/:cbkId/:recId", function(req, res) {
+//   console.log("get /api/cookbook/"+req.params.cbkId+'/'+req.params.recId);
+//   model.findById()
+// })
+
 module.exports = router;
