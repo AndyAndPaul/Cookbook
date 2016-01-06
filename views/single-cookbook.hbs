@@ -18,10 +18,19 @@
       <div class="left-element"><strong>Prep Time: </strong> <%= prepTime %> minutes</div>
       <div class="right-element"><strong>Cook Time: </strong> <%= cookTime %> minutes</div>
     </div>
-    <h4>Ingredents</h4>
+    <h4>Ingredients</h4>
     <ul>
-      <% for( var i = 0; i < ingredients.length; i++ ) { %>
-        <li><%= ingredients[i] %></li>
+      <% for( var i = 0; i < ingredients.length; i++ ) {
+        var plural = '';
+        // add an s if the qty is plural and unit doesn't end in s
+        if(ingredients[i].quantity.whole > 1 && ingredients[i].unit.slice(-1) != 's') {
+          plural = 's';
+        } %>
+        <li><%= ingredients[i].quantity.whole %>
+          <% if(ingredients[i].quantity.numerator != 0 && ingredients[i].quantity.denominator != 0) { %>
+            &amp; <%= ingredients[i].quantity.numerator %>/<%= ingredients[i].quantity.denominator %>
+          <% } %>
+          <%= ingredients[i].unit + plural %> <%= ingredients[i].ingredient %></li>
       <% } %>
     </ul>
     <h4>Cooking instructions</h4>
