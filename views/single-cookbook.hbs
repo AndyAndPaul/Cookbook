@@ -10,8 +10,10 @@
 </script>
 <script type="text/template" id="recipe-template">
   <article class="recipe">
-
-    <h3>Recipe name</h3>
+    <% if(image) { %>
+      <img src="<%= image %>" alt="<%= name %>">
+    <% } %>
+    <h3><%= name %></h3>
     <div class="column-wrapper">
       <div class="left-element"><strong>Prep Time: </strong> <%= prepTime %> minutes</div>
       <div class="right-element"><strong>Cook Time: </strong> <%= cookTime %> minutes</div>
