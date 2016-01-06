@@ -4,7 +4,7 @@
     Schema for the "recipes" collection?
 
   Last edited
-    by pavasich
+    by andy-j-d
     on 1/5/2016
 
   TODO:
@@ -17,7 +17,15 @@ var RecipeSchema = new mongoose.Schema({
   name: String,
   prepTime: Number,
   cookTime: Number,
-  ingredients: [String],
+  ingredients: [{
+    ingredient: String,
+    quantity: {
+      whole: Number,
+      numerator: Number,
+      denominator: Number
+    },
+    unit: String
+  }],
   instructions: [String],
   tags: [String],
   image: {type: String, default:"/img/cake.jpg"},
