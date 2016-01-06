@@ -194,6 +194,6 @@ router
 */
 
 //                                                              GET
-.get('/')
+// .get('/')
 
 module.exports = router;
