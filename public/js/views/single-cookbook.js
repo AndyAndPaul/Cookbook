@@ -100,6 +100,5 @@ app.ModelView = Backbone.View.extend({
   render: function() {
     var html = _.template($('#recipe-template').html())(this.model);
     this.$el.append(html);
-    this.$el.append(this.deleteButton);
   }
 });
