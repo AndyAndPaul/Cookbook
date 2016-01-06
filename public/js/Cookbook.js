@@ -28,29 +28,28 @@ app.CookbookView = Backbone.View.extend({
   initialize: function() {
     console.log('Cookbook view initialized');
     this.$el.html('');
-    console.log(this.recipeList);
-    this.render();
+    var self = this;
+    active.recipeList.fetch({
+      success: function(data) {
+          active.recipeModels = data.models;
+          console.log(active.recipeModels)
+          self.render();
+      }
+    });
+
   },
 
   render: function() {
-    var target = this.el;
-    for (var m in active.recipeList.models)
-      console.log(active.recipeList[m].attributes)
-    // for (var i = 0; i < this.recipeList.models.length; i++) {
-    //   console.log(this.recipeList.models[i]);
-    //   this.recipeList.models[i].fetch({
-    //     success: function(data) {
-    //       var tmp = new app.RecipeView({ model: data });
-    //       $target.append(tmp.render().el)
-    //     }
-    //   })
-    //
-    // }
-  },
+    var target = this.$el;
+    active.recipeModels.forEach(function(m) {
+      target.append(new app.RecipeView( { model: m } ).render().html)
+    })
+  }
 
 });
 
 $(document).ready(function() {
+  console.log("cookbookId: " + app.cookbookId);
   active.Cookbook = new app.Cookbook(app.cookbookId)
   active.CookbookView = new app.CookbookView({ model: active.Cookbook });
 })
