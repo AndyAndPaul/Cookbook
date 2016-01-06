@@ -7,7 +7,8 @@ app.createRecipeView = Backbone.View.extend({
     'click .create-recipe-button': 'createRecipe',
     'click .new-ingredient': 'addIngredientLine',
     'click .new-instruction': 'addInstructionLine',
-    'click .new-tag': 'addTagLine'
+    'click .new-tag': 'addTagLine',
+    'change #add-image': 'uploadImage'
   },
   createRecipe: function() {
     console.log('adding recipe');
@@ -56,6 +57,10 @@ app.createRecipeView = Backbone.View.extend({
   addTagLine: function() {
     var html = _.template($('#add-tag-template').html());
     $('#add-tags-container').append(html);
+  },
+  uploadImage: function() {
+    var image = document.getElementById('add-image').files[0];
+    console.log(image);
   },
   initialize: function() {
     console.log('addRecipeView instantiated');
