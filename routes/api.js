@@ -4,7 +4,7 @@
 
   Last edited
     by pavasich
-    on 1/5/2016
+    on 1/6/2016
 
   TODO:
     render all pretty
@@ -12,7 +12,7 @@
 
 var express = require('express'),
     router  = express.Router(),
-    exp   = require('../models/Cookbook');
+    exp    = require('../models/Cookbook');
 var model  = exp.Cookbook,
     Recipe = exp.Recipe;
 
