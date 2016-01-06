@@ -110,6 +110,19 @@ router
 
   })
 })
+//                                                              GET ALL
+.get("/recipe/:cookbookId", function(req, res) {
+  console.log("get /api/recipe/" + req.params.cookbookId);
+
+  model.findById(req.params.cookbookId, function(err, cookbook) {
+
+    if (err) res.json(err)
+
+    else res.json(cookbook.recipes)
+
+  })
+})
+
 //                                                              POST
 .post('/recipe/:cookbookId', function(req, res) {
   console.log("post /api/recipe/"+req.params.cookbookId);
