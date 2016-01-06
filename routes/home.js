@@ -26,7 +26,8 @@ router
   res.render('single-cookbook', {
     user: req.user,
     cookbookId: req.params.id,
-    title: ''
+    title: '',
+    singleCookbook: true
   });
 })
 
