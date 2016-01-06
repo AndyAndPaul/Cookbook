@@ -7,7 +7,6 @@
     on 1/5/2016
 
   TODO:
-    add functionality to routes
     render all pretty
 */
 
