@@ -1,7 +1,7 @@
 /*
   Cookbook/models/Cookbook.js
-    Schema for the "cookbooks" collection
-    Schema for the "recipes" collection?
+    Schema for the 'cookbooks' collection
+    Schema for the 'recipes' collection?
 
   Last edited
     by andy-j-d
@@ -28,7 +28,7 @@ var RecipeSchema = new mongoose.Schema({
   }],
   instructions: [String],
   tags: [String],
-  image: {type: String, default:"/img/cake.jpg"},
+  image: {type: String, default:''},
   authors: [String]
 })
 
@@ -38,5 +38,5 @@ var CookbookSchema = new mongoose.Schema({
   recipes: [RecipeSchema]
 })
 
-module.exports.Cookbook = mongoose.model("Cookbook", CookbookSchema, "cookbooks");
-module.exports.Recipe = mongoose.model("Recipe", RecipeSchema);
+module.exports.Cookbook = mongoose.model('Cookbook', CookbookSchema, 'cookbooks');
+module.exports.Recipe = mongoose.model('Recipe', RecipeSchema);

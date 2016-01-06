@@ -1,6 +1,6 @@
 /*
   Cookbook/models/Account.js
-    Schema for the "Accounts" collection
+    Schema for the 'Accounts' collection
 
   Last edited
     by andy-j-d
