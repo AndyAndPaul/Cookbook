@@ -60,5 +60,41 @@
     </div>
   </article>
 </script>
+
+<script type="text/template" id="add-recipe-template">
+  <article id="add-recipe-form" class="recipe">
+    <h3>Create a New Recipe</h3>
+    <input type="text" id="recipe-name" placeholder="Recipe Name">
+    <input type="number" id="prep-time" placeholder="Prep Time">
+    <input type="number" id="cook-time" placeholder="Cook Time">
+    <h4>Ingredients</h4>
+    <div id="add-ingredients-container">
+      <div class="add-ingredient">
+        <input type="number" class="qty-whole" value="1"> &amp;
+          <input type="number" class="qty-numerator" value="1">/
+          <input type="number" class="qty-denominator" value="1">
+        <input type="text" class="unit" placeholder="unit">
+        <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient"></i><br>
+        Quantity Unit Ingredient
+      </div>
+    </div>
+    <h4>Instructions</h4>
+    <input type="text" class="add-instruction" placeholder="Step 1"> <i class="fa fa-plus-circle new-instruction"></i>
+    <h4>Tags</h4>
+    <input type="text" class="add-tag" placeholder="tag"> <i class="fa fa-plus-circle new-tag"></i>
+    <button id="create-recipe-button" class="create-recipe-button">Create recipe</button>
+  </div>
+</script>
+
+<script type="text/template" id="add-ingredient-template">
+  <div class="add-ingredient">
+    <input type="number" class="qty-whole" value="1"> &amp; <input type="number" class="qty-numerator" value="1">/<input type="number" class="qty-denominator" value="1">
+    <input type="text" class="unit" placeholder="unit">
+    <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient"></i><br>
+    Quantity Unit Ingredient
+  </div>
+</script>
+
 <script src="/js/Recipe.js"></script>
 <script src="/js/Cookbook.js"></script>
+<script src="/js/views/add-recipe.js"></script>

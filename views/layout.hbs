@@ -43,7 +43,9 @@
             </div>
             <div class="three-quarter-right text-right">
               <p>
-                {{#if user}}
+                {{#if singleCookbook}}
+                  <span id="add-recipe-button"><i class="fa fa-plus"></i>&nbsp;Add&nbsp;Recipe</span>
+                {{else if user}}
                   Welcome, {{user.username}}
                 {{else}}
                   <a href='/account/login'>Log in</a> &vert; <a href='/account/register'>Register</a>
