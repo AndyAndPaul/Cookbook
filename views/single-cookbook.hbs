@@ -61,6 +61,10 @@
   </article>
 </script>
 
+<!-- <script src="/js/Recipe.js"></script>
+<script src="/js/Cookbook.js"></script> -->
+
+
 <script type="text/template" id="add-recipe-template">
   <article id="add-recipe-form" class="recipe">
     <h3>Create a New Recipe</h3>
@@ -70,9 +74,7 @@
     <h4>Ingredients</h4>
     <div id="add-ingredients-container">
       <div class="add-ingredient">
-        <input type="number" class="qty-whole" value="1"> &amp;
-          <input type="number" class="qty-numerator" value="1">/
-          <input type="number" class="qty-denominator" value="1">
+        <input type="number" class="qty-whole" value="1"> &amp; <input type="number" class="qty-numerator" value="1">/<input type="number" class="qty-denominator" value="1">
         <input type="text" class="unit" placeholder="unit">
         <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient"></i><br>
         Quantity Unit Ingredient
@@ -95,6 +97,6 @@
   </div>
 </script>
 
-<script src="/js/Recipe.js"></script>
-<script src="/js/Cookbook.js"></script>
+<script src="/js/views/single-cookbook.js"></script>
+<script src="/js/models/single-cookbook.js"></script>
 <script src="/js/views/add-recipe.js"></script>
