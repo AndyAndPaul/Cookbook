@@ -1,5 +1,5 @@
 /*
-  Cookbook/db/dbSetup.js
+  Cookbook/db/setupRecipes.js
     database setup
 
   Last edited
@@ -8,19 +8,11 @@
 */
 
 require('./database');
+var mongoose = require('mongoose');
 var models = require('../models/Cookbook');
 
-// models.Cookbook.create({
-//     "name": "ADPV Recipes",
-//     "recipes": [],
-//     "accounts": []
-//   },
-//   function(err, cookbook) {
-//     console.log(cookbook);
-//   })
-
-models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
-  cookbook = cookbook[0];
+models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbooks) {
+  console.log(cookbooks);
   models.Recipe.create({
     "name": "Peanut Butter and Jelly Sandwich",
     "prepTime": 2,
@@ -96,3 +88,5 @@ models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
   });
 
 });
+
+mongoose.disconnect();
