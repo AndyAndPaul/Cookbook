@@ -140,7 +140,7 @@ router
   })
 })
 
-//                                                              PUT/PATCH
+//                                                             PUT/PATCH
 .put('/recipe/:cookbookId/:recipeId', function(req, res) {
   console.log("put /api/recpie/"+
               req.params.cookbookId+'/'+
@@ -172,7 +172,7 @@ router
   })
 })
 
-//                                                              DELETE
+//                                                             DELETE
 .delete('/recipe/:cookbookId/:recipeId', function(req, res) {
   console.log("delete /api/recpie/"+
               req.params.cookbookId+'/'+

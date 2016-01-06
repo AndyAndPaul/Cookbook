@@ -19,7 +19,7 @@ Backbone.Model.idAttribute = "_id";
 app.Recipe = Backbone.Model.extend({
   // needs to have a cookbook ID
   initialize: function() {
-    this.url = "/api/recipe/" + app.cookbookId + '/' + this.attributes._id;
+    // this.url = "/api/recipe/" + app.cookbookId + '/' + this.attributes._id;
   }
 })
 

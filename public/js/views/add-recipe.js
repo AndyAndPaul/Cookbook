@@ -42,7 +42,8 @@ app.createRecipeView = Backbone.View.extend({
     };
     console.log(recipe);
     var cookbookId = (this.collection.url.split('cookbook/')[1]);
-    this.collection.url = '/api/recipe/' + cookbookId;
+    console.log(app.cookbookId);
+    this.collection.url = '/api/recipe/' + app.cookbookId;
     this.collection.create(recipe);
     $('#add-recipe-form').hide();
   },
@@ -101,7 +102,7 @@ $(document).ready( function() {
       $('body, html').animate({ scrollTop: $("#add-recipe-form").offset().top -200 }, 1000);
       // instantiate Bakcbone view for form
       active.createRecipeView = new app.createRecipeView({
-        collection: active.collection
+        collection: active.recipeList
       });
     }
   });
