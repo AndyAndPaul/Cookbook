@@ -53,7 +53,6 @@ app.UserCookbookList = Backbone.Collection.extend({
     this.url = '/api/user/' + userId + '/cookbooks';
     return this;
   },
-  
   model: app.Cookbook
 })
 
