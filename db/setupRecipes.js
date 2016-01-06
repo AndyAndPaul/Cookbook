@@ -8,7 +8,6 @@
 */
 
 require('./database');
-var mongoose = require('mongoose');
 var models = require('../models/Cookbook');
 
 models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbooks) {
@@ -88,5 +87,3 @@ models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbooks) {
   });
 
 });
-
-mongoose.disconnect();
