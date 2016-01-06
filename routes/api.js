@@ -74,9 +74,15 @@ router
   })
 })
 
-// .get("/cookbook/:cbkId/:recId", function(req, res) {
-//   console.log("get /api/cookbook/"+req.params.cbkId+'/'+req.params.recId);
-//   model.findById()
-// })
+.get("/recipe/:cookbookId/:recipeId", function(req, res) {
+  console.log("get /api/recipe/"+req.params.cookbookId+'/'+req.params.recipeId);
+  model.findById(req.params.cookbookId, function(err, cookbook) {
+    if (err) {
+      res.json(err)
+    } else {
+      res.json(cookbook.recipes.id(req.params.recipeId))
+    }
+  })
+})
 
 module.exports = router;
