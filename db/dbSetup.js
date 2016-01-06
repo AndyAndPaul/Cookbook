@@ -26,9 +26,34 @@ models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
     "prepTime": 2,
     "cookTime": 0,
     "ingredients": [
-      "peanut butter",
-      "jelly",
-      "bread"
+      {
+        ingredient: "Peanut butter",
+        quantity: {
+          whole: 1,
+          numerator: 0,
+          denominator: 2
+        },
+        unit: "dab"
+      },
+      {
+        ingredient: "Jelly",
+        quantity: {
+          whole: 1,
+          numerator: 1,
+          denominator: 2
+        },
+        unit: "glob"
+      },
+      {
+        ingredient: "Bread",
+        quantity: {
+          whole: 2,
+          numerator: 0,
+          denominator: 2
+        },
+        unit: "slices"
+      }
+
     ],
     "instructions": [
       "Spread peanut butter on one piece of bread.",
@@ -50,8 +75,24 @@ models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
     "prepTime": 2,
     "cookTime": 5,
     "ingredients": [
-      "1 box angel hair pasta",
-      "1 bottle marinara sauce"
+      {
+        ingredient: "angel hair",
+        quantity: {
+          whole: 1,
+          numerator: 0,
+          denominator: 2
+        },
+        unit: "box"
+      },
+      {
+        ingredient: "marinara sauce",
+        quantity: {
+          whole: 1,
+          numerator: 0,
+          denominator: 2
+        },
+        unit: "bottle"
+      }
     ],
     "instructions": [
       "Heat marinara sauce in a large saucepan",
@@ -75,9 +116,33 @@ models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
     "prepTime": 5,
     "cookTime": 15,
     "ingredients": [
-      "ears of corn",
-      "butter",
-      "salt and pepper"
+      {
+        ingredient: "corn",
+        quantity: {
+          whole: 8,
+          numerator: 0,
+          denominator: 2
+        },
+        unit: "ear"
+      },
+      {
+        ingredient: "butter",
+        quantity: {
+          whole: 2,
+          numerator: 1,
+          denominator: 4
+        },
+        unit: "stick"
+      },
+      {
+        ingredient: "salt",
+        quantity: {
+          whole: 0,
+          numerator: 1,
+          denominator: 2
+        },
+        unit: "tsp"
+      }
     ],
     "instructions": [
       "Place a pot of water over high heat",
