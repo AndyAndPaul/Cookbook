@@ -3,15 +3,16 @@
     database setup
 
   Last edited
-    by pavasich
+    by andy-j-d
     on 1/5/2016
 */
 
 require('./database');
 var models = require('../models/Cookbook');
 
-models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbooks) {
-  console.log(cookbooks);
+models.Cookbook.find({name: "ADPV Recipes"}, function(err, cookbook) {
+  cookbook = cookbook[0];
+  console.log(cookbook);
   models.Recipe.create({
     "name": "Peanut Butter and Jelly Sandwich",
     "prepTime": 2,
