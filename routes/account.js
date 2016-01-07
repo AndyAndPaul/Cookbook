@@ -7,7 +7,7 @@
     on 1/5/2016
 
   TODO:
-  
+
 */
 
 // account router
@@ -15,6 +15,7 @@ var express = require('express');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var Account = require('../models/Account');
+var models = require('../models/Cookbook');
 var router = express.Router();
 
 passport.use(new LocalStrategy(Account.authenticate()));
@@ -40,17 +41,24 @@ router.get('/register', function(req, res) {
 });
 
 router.post('/register', function(req, res) {
-  var username = req.body.username
-  Account.register(new Account({
-    username: username
-  }),
-  req.body.password, function(error, account) {
-      if (error) {
-        return res.render('register', { account: account });
-      }
-      passport.authenticate('local')(req, res, function() {
-        res.redirect('/');
-      });
+  var username = req.body.username;
+  models.Cookbook.create({name: username+"'s recipes"}, function(err, cookbook) {
+    if (err) res.json(err)
+    else {
+      Account.register(new Account({ username: username,
+                                     cookbooks: [cookbook.id] }),
+        req.body.password,
+        function(error, account) {
+          if (error) {
+            res.render('register', { account: account });
+          }
+          else {
+            passport.authenticate('local')(req, res, function() {
+              res.redirect('/');
+            });
+          }
+      })
+    }
   })
 });
 

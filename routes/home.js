@@ -15,10 +15,14 @@ var express = require('express'),
 router
 .get('/', function(req, res) {
   console.log('get /')
-  res.render('index', {
-    user: req.user,
-    title: 'Home'
-  });
+  if (req.user)
+    res.redirect('/cookbook/'+req.user.cookbooks[0])
+  else {
+    res.render('index', {
+      user: req.user,
+      title: 'Home'
+    });
+  }
 })
 
 .get('/cookbook/:id', function(req, res) {
