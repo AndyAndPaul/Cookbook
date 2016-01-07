@@ -34,6 +34,8 @@ app.RecipeView = Backbone.View.extend({
   template: _.template($('#recipe-template').html()),
   render: function() {
     this.html = this.template(this.model.attributes);
+
+    // call chaining
     return this;
   }
 })
@@ -42,6 +44,9 @@ app.RecipeList = Backbone.Collection.extend({
   initialize: function(cookbookId) {
     // set the url before fetching
     this.url = '/api/recipe/' + app.cookbookId;
+
+    // call chaining
+    return this;
   },
   model: app.Recipe
 })
