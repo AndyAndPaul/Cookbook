@@ -33,11 +33,14 @@ app.RecipeView = Backbone.View.extend({
   },
 
   deleteRecipe: function(e) {
-    console.log("goodbye, cruel world");
+
+    console.log('button clicked');
     this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
     $(this.el).remove();
     this.model.destroy({
-      wait: true
+      wait: true,
+      success: function(model, res, options){
+      }
     });
   },
 
@@ -54,8 +57,12 @@ app.RecipeList = Backbone.Collection.extend({
   initialize: function(cookbookId) {
     // set the url before fetching
     this.url = '/api/recipe/' + app.cookbookId;
-
-    // call chaining
+    // this.on('add', function(recipe, cookbook, event) {
+    //   console.log('add event');
+    //   console.log(recipe);
+    //   active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe.attributes } ).render().html);
+    // });
+    // // call chaining
     return this;
   },
   model: app.Recipe
