@@ -17,9 +17,6 @@ var active = active || {};
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
     this.idAttribute = '_id';
-    this.on('sync', function(recipe, cookbook, event) {
-      active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
-    })
   }
 });
 
@@ -36,12 +33,11 @@ app.RecipeView = Backbone.View.extend({
   },
 
   deleteRecipe: function(e) {
-  this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
-  $(this.el).remove();
-  this.model.destroy({
-      wait: true,
-      success: function(model, res, options){
-      }
+    console.log("goodbye, cruel world");
+    this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
+    $(this.el).remove();
+    this.model.destroy({
+      wait: true
     });
   },
 
