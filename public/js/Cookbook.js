@@ -55,20 +55,20 @@ app.UserCookbookList = Backbone.Collection.extend({
   },
   model: app.Cookbook
 })
-app.UserCookbookListView = Backbone.View.extend({
-  html: '',
-  el: '#user-cookbook-list'
-  template: _.template($('#cookbook-template').html()),
-  render: function() {
-    var self = this;
-    active.UserCookbooks.fetch().then(function() {
-      active.UserCOokbooks.models.forEach(function(m) {
-        self.$el.append(self.template(m.attributes));
-      });
-    })
-    this.html = this.template()
-  }
-})
+// app.UserCookbookListView = Backbone.View.extend({
+//   html: '',
+//   el: '#user-cookbook-list',
+//   template: _.template($('#cookbook-template').html()),
+//   render: function() {
+//     var self = this;
+//     active.UserCookbooks.fetch().then(function() {
+//       active.UserCOokbooks.models.forEach(function(m) {
+//         self.$el.append(self.template(m.attributes));
+//       });
+//     })
+//     this.html = this.template()
+//   }
+// })
 
 $(document).ready(function() {
   app.userId = ' :3 ';
