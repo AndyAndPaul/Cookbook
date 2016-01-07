@@ -18,6 +18,7 @@ Backbone.Model.idAttribute = '_id';
 
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
+    this.idAttribute = '_id';
     this.on('sync', function(recipe, cookbook, event) {
       active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
     })
@@ -39,8 +40,15 @@ app.RecipeView = Backbone.View.extend({
   initialize: function() {
   },
 
-  deleteRecipe: function() {
-    console.log("delete me");
+  deleteRecipe: function(e) {
+  this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
+  this.$el.remove();
+  this.model.destroy({
+      wait: true,
+      success: function(model, res, options){
+      }
+    });
+
   },
 
 
