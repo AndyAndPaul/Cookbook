@@ -29,14 +29,14 @@ app.CookbookView = Backbone.View.extend({
     console.log('Cookbook view initialized');
     this.$el.html('');
     var self = this;
-    active.recipeList.fetch({
-      success: function(data) {
-          active.recipeModels = data.models;
-          console.log(active.recipeModels)
-          self.render();
-      }
-    });
 
+    /* fetch models from the database,
+        then, render */
+    active.recipeList.fetch()
+      .then(function() {
+        active.recipeModels = active.recipeList.models;
+        self.render();
+      });
   },
 
   render: function() {
