@@ -190,7 +190,7 @@ li {
 .add-recipe-form .add-instruction {
   width: 80%;
 }
-.add-recipe-form .add-tag {
+.add-recipe-form .add-tag:not(:first-child) {
   margin-left: 0.5em;
 }
 .add-recipe-form .delete-input {

@@ -19,7 +19,8 @@ app.createRecipeView = Backbone.View.extend({
     'click .new-ingredient': 'addIngredientLine',
     'click .new-instruction': 'addInstructionLine',
     'click .new-tag': 'addTagLine',
-    'change #add-image': 'uploadImage'
+    'change #add-image': 'uploadImage',
+    'click .delete-input': 'deleteInput'
   },
   createRecipe: function() {
     console.log('adding recipe');
@@ -86,6 +87,11 @@ app.createRecipeView = Backbone.View.extend({
       };
       reader.readAsDataURL( image );
     }
+  },
+  deleteInput: function(e) {
+    console.log(e);
+    console.log(this);
+    $(e.target).parent().remove();
   },
   initialize: function() {
     console.log('addRecipeView instantiated');
