@@ -8,6 +8,14 @@ article {
   box-sizing: border-box;
   margin: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.25em 0;
+}
 img {
   max-width: 100%;
 }
@@ -18,6 +26,9 @@ a {
 a:hover {
   color: #000;
   text-decoration: underline;
+}
+.clickable {
+  cursor: pointer;
 }
 .full-width {
   width: 100%;
@@ -156,4 +167,32 @@ li {
   width: 100%;
   max-width: 800px;
   padding: 1em;
+}
+.add-recipe-form {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #EFEFEF;
+}
+.add-recipe-form input,
+.add-recipe-form button {
+  padding: 0.5em;
+  margin-bottom: 0.25em;
+}
+.add-recipe-form .recipe-name,
+.add-recipe-form button {
+  width: 100%;
+}
+.add-recipe-form .unit {
+  width: 5em;
+}
+.add-recipe-form .add-ingredient input[type=number] {
+  width: 3em;
+}
+.add-recipe-form .add-instruction {
+  width: 80%;
+}
+.add-recipe-form .add-tag {
+  margin-left: 0.5em;
+}
+.add-recipe-form .delete-input {
+  margin-left: 0.5em;
 }

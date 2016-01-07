@@ -47,7 +47,6 @@ app.RecipeList = Backbone.Collection.extend({
 
     // call chaining
     return this;
-
   },
   model: app.Recipe
 })

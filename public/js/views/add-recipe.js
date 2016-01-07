@@ -60,7 +60,7 @@ app.createRecipeView = Backbone.View.extend({
     // this.collection.url = '/api/recipe/' + app.cookbookId;
     this.collection.create(recipe, {
       success: function(e) {
-        $('#add-recipe-form').hide();
+        $('#add-recipe-form').remove();
         active.recipeImage = false;
       }
     });
