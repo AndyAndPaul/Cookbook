@@ -135,9 +135,9 @@ router
       else {
         cookbook.recipes.push(recipe)
         cookbook.save();
+        res.json(recipe);
       }
     })
-    res.json(cookbook);
   })
 })
 

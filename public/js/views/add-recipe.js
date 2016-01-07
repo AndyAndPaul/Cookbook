@@ -43,6 +43,9 @@ app.createRecipeView = Backbone.View.extend({
     $('.add-tag').each(function(tag) {
       tags.push($(this).val());
     });
+    if(!active.recipeImage) {
+      active.recipeImage = '';
+    }
     var recipe = {
       name: $('#recipe-name').val(),
       prepTime: $('#prep-time').val(),
@@ -50,18 +53,17 @@ app.createRecipeView = Backbone.View.extend({
       ingredients: ingredients,
       instructions: instructions,
       tags: tags,
+      image: active.recipeImage
     };
-    if(active.recipeImage) {
-      recipe.image = active.recipeImage;
-    } else {
-      recipe.image = '';
-    }
-    console.log(recipe);
-    var cookbookId = (this.collection.url.split('cookbook/')[1]);
-    this.collection.url = '/api/recipe/' + app.cookbookId;
-    this.collection.create(recipe);
-    active.recipeImage = false;
-    $('#add-recipe-form').hide();
+    // var cookbookId = (this.collection.url.split('cookbook/')[1]);
+    // this.collection.url = '/api/recipe/' + app.cookbookId;
+    this.collection.create(recipe, {
+      success: function(e) {
+        $('#add-recipe-form').hide();
+        active.recipeImage = false;
+      }
+    });
+
   },
   addIngredientLine: function() {
     var html = _.template($('#add-ingredient-template').html());
@@ -129,6 +131,7 @@ $(document).ready( function() {
     } else {
       // toggle the form if it's already been displayed
       $('#add-recipe-form').toggle();
+      $('body, html').animate({ scrollTop: $("#add-recipe-form").offset().top -200 }, 1000);
     }
   });
 });

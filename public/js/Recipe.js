@@ -3,7 +3,7 @@
     Backbone recipe model & view
 
   Last edited
-    by pavasich
+    by andy-j-d
     on 1/6/2016
 
   TODO:
@@ -18,11 +18,11 @@ Backbone.Model.idAttribute = '_id';
 
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
-    this.on('create', function() {
-      console.log(this);
+    this.on('sync', function(recipe, cookbook, event) {
+      active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
     })
   }
-})
+});
 
 /*
   pass the model
@@ -31,9 +31,7 @@ app.Recipe = Backbone.Model.extend({
 */
 app.RecipeView = Backbone.View.extend({
   html: '',
-
   template: _.template($('#recipe-template').html()),
-
   render: function() {
     this.html = this.template(this.model.attributes);
 
@@ -49,6 +47,7 @@ app.RecipeList = Backbone.Collection.extend({
 
     // call chaining
     return this;
+
   },
   model: app.Recipe
 })
