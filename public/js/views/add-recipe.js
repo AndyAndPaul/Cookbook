@@ -72,7 +72,10 @@ app.createRecipeView = Backbone.View.extend({
     $('#add-ingredients-container').append(html);
   },
   addInstructionLine: function() {
-    var html = _.template($('#add-instruction-template').html());
+    active.stepNumber += 1;
+    var html = _.template($('#add-instruction-template').html())({
+      i: active.stepNumber
+    });
     $('#add-instructions-container').append(html);
   },
   addTagLine: function() {
@@ -91,11 +94,14 @@ app.createRecipeView = Backbone.View.extend({
   },
   deleteInput: function(e) {
     console.log(e);
-    console.log(this);
     $(e.target).parent().remove();
+    if(e.target.parentNode.className == 'single-instruction') {
+      active.stepNumber -= 1;
+    }
   },
   initialize: function() {
     console.log('addRecipeView instantiated');
+    active.stepNumber = 1;
     console.log(this);
   }
   // validateInput: function() {
