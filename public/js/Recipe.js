@@ -14,8 +14,6 @@
 var app = app || {};
 var active = active || {};
 
-Backbone.Model.idAttribute = '_id';
-
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
     this.idAttribute = '_id';
@@ -31,11 +29,8 @@ app.Recipe = Backbone.Model.extend({
    var recipeView = new app.RecipeView({model: recipe})
 */
 app.RecipeView = Backbone.View.extend({
-
   html: '',
   template: _.template($('#recipe-template').html()),
-
-  events: { },
 
   initialize: function() {
   },
@@ -48,10 +43,7 @@ app.RecipeView = Backbone.View.extend({
       success: function(model, res, options){
       }
     });
-
   },
-
-
 
   render: function() {
     this.html = this.template(this.model.attributes);
