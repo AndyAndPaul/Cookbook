@@ -17,7 +17,11 @@ var active = active || {};
 Backbone.Model.idAttribute = '_id';
 
 app.Recipe = Backbone.Model.extend({
-  initialize: function() { }
+  initialize: function() {
+    this.on('create', function() {
+      console.log(this);
+    })
+  }
 })
 
 /*
@@ -32,6 +36,8 @@ app.RecipeView = Backbone.View.extend({
 
   render: function() {
     this.html = this.template(this.model.attributes);
+
+    // call chaining
     return this;
   }
 })
@@ -41,6 +47,7 @@ app.RecipeList = Backbone.Collection.extend({
     // set the url before fetching
     this.url = '/api/recipe/' + app.cookbookId;
 
+    // call chaining
     return this;
   },
   model: app.Recipe
