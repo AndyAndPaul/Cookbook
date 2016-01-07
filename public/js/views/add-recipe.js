@@ -64,7 +64,6 @@ app.createRecipeView = Backbone.View.extend({
         $('#add-recipe-form').remove();
         active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
         active.recipeImage = false;
-        active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
       }
     });
 
