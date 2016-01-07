@@ -61,8 +61,13 @@ app.createRecipeView = Backbone.View.extend({
     // this.collection.url = '/api/recipe/' + app.cookbookId;
     this.collection.create(recipe, {
       success: function(recipe) {
+        active.recipeViews = active.recipeViews || {};
         $('#add-recipe-form').remove();
-        active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
+        var events = {};
+        events['click button#delete_' + recipe.attributes._id] = 'deleteRecipe';
+        events['click .toggle-recipe-info'] = 'toggleRecipeInfo';
+        active.recipeViews['view_' + recipe.attributes._id] = new app.RecipeView( { model: recipe, events } );
+        active.CookbookView.$el.prepend(active.recipeViews['view_' + recipe.attributes._id].render().html);
         active.recipeImage = false;
       }
     });
