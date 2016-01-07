@@ -93,6 +93,49 @@ router
   })
 })
 
+.get('/cookbook/:id/search/:searchterm', function(req, res) {
+  console.log('get /api/cookbook/'+req.params.id +'/search/' + req.params.searchterm);
+  model.findById(req.params.id, function(err, cookbook) {
+    if(err) res.json(err)
+    else {
+      var results = [];
+      var query = req.params.searchterm;
+      cookbook.recipes.map(function(recipe) {
+        if(recipe.name.toLowerCase().search(query) != -1) {
+          results.push(recipe);
+        }
+      });
+      res.json(results);
+    }
+  });
+  // var regex = ".*" + req.params.searchterm + ".*";
+  // model.find({
+  //   _id: req.params.id,
+  //   'recipes.name': {$regex : regex }
+  // }).exec(function(err, results) {
+  //   if(err) res.json(err);
+  //   else res.json(results);
+  // })
+
+
+  // model.findById(req.params.id, function(err, cookbook) {
+  //
+  //   if (err) res.json(err);
+  //
+  //   else {
+  //     if(req.params.searchterm) {
+  //       var regex = ".*" + req.params.searchterm + ".*";
+  //       model.find({"name" : {$regex : regex }}, function(err, results) {
+  //         console.log(results);
+  //         res.json(results);
+  //       });
+  //       // return res.json(found);
+  //     } else res.json(cookbook);
+  //
+  //   }
+  // })
+})
+
 
 /*
                     RECIPE  OPERATIONS

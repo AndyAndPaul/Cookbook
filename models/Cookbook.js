@@ -32,6 +32,8 @@ var RecipeSchema = new mongoose.Schema({
   authors: [String]
 })
 
+RecipeSchema.index({ name: 1 });
+
 var CookbookSchema = new mongoose.Schema({
   name: String,
   accounts: [],
