@@ -26,15 +26,16 @@ app.createRecipeView = Backbone.View.extend({
     console.log('adding recipe');
     var ingredients = [];
     $('.add-ingredient').each(function(rawIngredient) {
-      console.log($(this));
-      var cookedIngredient = {};
-      cookedIngredient.quantity = {};
-      cookedIngredient.quantity.whole = $(this).children('.qty-whole').val();
-      cookedIngredient.quantity.numerator = $(this).children('.qty-numerator').val();
-      cookedIngredient.quantity.denominator = $(this).children('.qty-denominator').val();
-      cookedIngredient.unit = $(this).children('.unit').val();
-      cookedIngredient.ingredient = $(this).children('.ingredient-name').val();
-      ingredients.push(cookedIngredient);
+      var self = this;
+      ingredients.push({
+        quantity: {
+          whole:       $(self).children('.qty-whole').val(),
+          numerator:   $(self).children('.qty-numerator').val(),
+          denominator: $(self).children('.qty-denominator').val()
+        },
+        unit: $(self).children('.unit').val(),
+        ingredient: $(self).children('.ingredient-name').val()
+      });
     });
     var instructions = [];
     $('.add-instruction').each(function(instruction) {
