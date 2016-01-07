@@ -3,7 +3,7 @@
     routes for the api
 
   Last edited
-    by pavasich
+    by andy-j-d
     on 1/6/2016
 
   TODO:

@@ -42,14 +42,6 @@ app.RecipeList = Backbone.Collection.extend({
   initialize: function(cookbookId) {
     // set the url before fetching
     this.url = '/api/recipe/' + app.cookbookId;
-    // re-render entire collection on change
-    // this.on('change', function(self, event) {
-    //   console.log('change event');
-      // var view = new app.CookbookView({
-      //   collection: self
-      // });
-    // });
-    // return this;
   },
   model: app.Recipe
 })

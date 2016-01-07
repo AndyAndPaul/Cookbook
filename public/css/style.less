@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0.25em 0;
+}
+
 img {
   max-width: 100%;
 }
@@ -17,6 +21,10 @@ a {
 a:hover {
   color: #000;
   text-decoration: underline;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .full-width {
@@ -173,5 +181,31 @@ li {
     max-width: @content-width;
     padding: 1em;
   }
+}
 
+.add-recipe-form {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #EFEFEF;
+  input, button {
+    padding: 0.5em;
+    margin-bottom: 0.25em;
+  }
+  .recipe-name, button {
+    width: 100%;
+  }
+  .unit {
+    width: 5em;
+  }
+  .add-ingredient input[type=number] {
+    width: 3em;
+  }
+  .add-instruction {
+    width: 80%;
+  }
+  .add-tag {
+    margin-left: 0.5em;
+  }
+  .delete-input {
+    margin-left: 0.5em;
+  }
 }
