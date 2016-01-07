@@ -4,7 +4,7 @@
 
   Last edited
     by andy-j-d
-    on 1/6/2016
+    on 1/7/2016
 
   TODO:
 
@@ -30,10 +30,29 @@ app.Recipe = Backbone.Model.extend({
    var recipeView = new app.RecipeView({model: recipe})
 */
 app.RecipeView = Backbone.View.extend({
+  initialize: function() {
+    console.log('RecipeView instantiated');
+    this.el = document.createElement('div');
+    // this.el.id = 'recipe_' + this.model.attributes._id;
+    this.el.id = this.model.attributes._id;
+    this.$el.on('click', '.delete-recipe', function(e) {
+      console.log('clickin buttons');
+    })
+    // this.events = {
+    //   'click .delete-recipe': 'deleteRecipe'
+    // };
+  },
+  // events: {
+  //   'click .delete-recipe': 'deleteRecipe'
+  // },
+  deleteRecipe: function(e) {
+    console.log(e);
+  },
   html: '',
   template: _.template($('#recipe-template').html()),
   render: function() {
     this.html = this.template(this.model.attributes);
+    this.html = $(this.el).append(this.html);
 
     // call chaining
     return this;

@@ -47,10 +47,10 @@ app.CookbookView = Backbone.View.extend({
 
   render: function() {
     var target = this.$el;
-    console.log(this);
     active.recipeModels.forEach(function(m) {
-      target.append(new app.RecipeView( { model: m } ).render().html)
-    })
+      // i see your lisp skills, paul -james
+      target.append(new app.RecipeView( { model: m } ).render().html);
+    });
   }
 
 });
