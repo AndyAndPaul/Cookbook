@@ -207,3 +207,6 @@ li {
 .add-recipe-form .delete-input {
   margin-left: 0.5em;
 }
+.recipe-info {
+  display: none;
+}

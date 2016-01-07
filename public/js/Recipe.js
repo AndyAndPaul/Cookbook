@@ -44,6 +44,11 @@ app.RecipeView = Backbone.View.extend({
     });
   },
 
+  toggleRecipeInfo: function(e) {
+    var id = e.target.parentNode.id.split('recipe_')[1];
+    $('#info_' + id).toggle();
+  },
+
   render: function() {
     this.html = this.template(this.model.attributes);
     this.html = $(this.el).append(this.html);
