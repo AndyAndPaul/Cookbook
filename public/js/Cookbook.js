@@ -49,7 +49,11 @@ app.CookbookView = Backbone.View.extend({
     var target = this.$el;
     active.recipeModels.forEach(function(m) {
       // i see your lisp skills, paul -james
-      target.append(new app.RecipeView( { model: m } ).render().html);
+
+      var events = {};
+      events["click button#delete_"+m.attributes._id] = "deleteRecipe";
+
+      target.append(new app.RecipeView( { model: m, events }).render().html);
     });
   }
 
