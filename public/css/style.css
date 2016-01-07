@@ -105,6 +105,7 @@ header {
 .page-title-bar h2 {
   font-weight: 400;
   text-align: left;
+  margin: 0;
 }
 .page-title-bar p {
   margin-top: 0.3em;

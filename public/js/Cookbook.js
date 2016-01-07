@@ -3,8 +3,8 @@
     Backbone cookbook model & view
 
   Last edited
-    by pavasich
-    on 1/6/2016
+    by andy-j-d
+    on 1/7/2016
 
   TODO:
 
@@ -18,6 +18,7 @@ Backbone.Model.idAttribute = '_id';
 
 app.Cookbook = Backbone.Model.extend({
   initialize: function() {
+    this.url = '/api/cookbook/' + app.cookbookId;
   }
 })
 
@@ -27,6 +28,11 @@ app.CookbookView = Backbone.View.extend({
 
   initialize: function() {
     console.log('Cookbook view initialized');
+    this.model.fetch().then(function(m) {
+      // render cookbook name as page title
+      $('#page-title').html(m.name);
+    });
+
     this.$el.html('');
     var self = this;
 
@@ -41,6 +47,7 @@ app.CookbookView = Backbone.View.extend({
 
   render: function() {
     var target = this.$el;
+    console.log(this);
     active.recipeModels.forEach(function(m) {
       target.append(new app.RecipeView( { model: m } ).render().html)
     })

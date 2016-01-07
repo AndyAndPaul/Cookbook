@@ -93,7 +93,6 @@ app.createRecipeView = Backbone.View.extend({
     }
   },
   deleteInput: function(e) {
-    console.log(e);
     $(e.target).parent().remove();
     if(e.target.parentNode.className == 'single-instruction') {
       active.stepNumber -= 1;
@@ -102,7 +101,6 @@ app.createRecipeView = Backbone.View.extend({
   initialize: function() {
     console.log('addRecipeView instantiated');
     active.stepNumber = 1;
-    console.log(this);
   }
   // validateInput: function() {
   //   var inputs = this.$el.children('input');
