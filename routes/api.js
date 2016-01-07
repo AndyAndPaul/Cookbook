@@ -108,32 +108,6 @@ router
       res.json(results);
     }
   });
-  // var regex = ".*" + req.params.searchterm + ".*";
-  // model.find({
-  //   _id: req.params.id,
-  //   'recipes.name': {$regex : regex }
-  // }).exec(function(err, results) {
-  //   if(err) res.json(err);
-  //   else res.json(results);
-  // })
-
-
-  // model.findById(req.params.id, function(err, cookbook) {
-  //
-  //   if (err) res.json(err);
-  //
-  //   else {
-  //     if(req.params.searchterm) {
-  //       var regex = ".*" + req.params.searchterm + ".*";
-  //       model.find({"name" : {$regex : regex }}, function(err, results) {
-  //         console.log(results);
-  //         res.json(results);
-  //       });
-  //       // return res.json(found);
-  //     } else res.json(cookbook);
-  //
-  //   }
-  // })
 })
 
 
