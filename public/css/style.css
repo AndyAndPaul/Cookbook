@@ -27,6 +27,16 @@ a:hover {
   color: #000;
   text-decoration: underline;
 }
+button {
+  padding: 0.5em;
+  width: 100px;
+  background: #EFEFEF;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+button:hover {
+  background: #DFDFDF;
+}
 .clickable {
   cursor: pointer;
 }
