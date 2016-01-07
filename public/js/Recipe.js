@@ -14,10 +14,9 @@
 var app = app || {};
 var active = active || {};
 
-Backbone.Model.idAttribute = '_id';
-
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
+    this.idAttribute = '_id';
     this.on('sync', function(recipe, cookbook, event) {
       active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe } ).render().html);
     })
@@ -30,17 +29,17 @@ app.Recipe = Backbone.Model.extend({
    var recipeView = new app.RecipeView({model: recipe})
 */
 app.RecipeView = Backbone.View.extend({
-
   html: '',
   template: _.template($('#recipe-template').html()),
-
-  events: { },
 
   initialize: function() {
   },
 
   deleteRecipe: function() {
-    console.log("delete me");
+    this.$el.remove();
+    this.model.destroy({
+      wait: true
+    });
   },
 
 
