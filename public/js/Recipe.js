@@ -37,7 +37,7 @@ app.RecipeView = Backbone.View.extend({
 
   deleteRecipe: function(e) {
   this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
-  this.$el.remove();
+  $(this.el).remove();
   this.model.destroy({
       wait: true,
       success: function(model, res, options){
