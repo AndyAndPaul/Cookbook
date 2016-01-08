@@ -15,7 +15,9 @@ var app = app || {};
 var active = active || {};
 
 app.Recipe = Backbone.Model.extend({
+
   initialize: function() {
+      this.idAttribute = '_id';
   }
 });
 
@@ -29,21 +31,30 @@ app.RecipeView = Backbone.View.extend({
   template: _.template($('#recipe-template').html()),
 
   initialize: function() {
-    // this.el = document.createElement('article');
     this.el.id = 'recipe_' + this.model.attributes._id;
     this.el.className = 'recipe';
-    this.$el = $(this.el);
   },
 
   deleteRecipe: function(e) {
+    var that = this;
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this recipe!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes!",
+      closeOnConfirm: false
+    },
+    function(){
+      swal("Recipe deleted.");
 
-    console.log('button clicked');
-    this.url = '/api/recipe/' + app.cookbookId + '/' + this.model.attributes._id;
-    $(this.el).remove();
-    this.model.destroy({
-      wait: true,
-      success: function(model, res, options){
-      }
+      that.url = '/api/recipe/' + app.cookbookId + '/' + that.model.attributes._id;
+      $(that.el).remove();
+      that.model.destroy({
+        wait: true,
+        success: function(model, res, options){ }
+      });
     });
   },
 

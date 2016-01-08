@@ -8,6 +8,10 @@ article {
   box-sizing: border-box;
   margin: 0;
 }
+html,
+body {
+  background: #fcfcef;
+}
 .mobile-hide {
   display: none;
 }
@@ -43,6 +47,9 @@ button:hover {
 .clickable {
   cursor: pointer;
 }
+.centered {
+  margin: 0 auto;
+}
 .full-width {
   width: 100%;
   padding: 1em;
@@ -57,7 +64,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 130px;
+  height: auto;
   background: rgba(255, 255, 255, 0.95);
 }
 .main-navigation {
@@ -110,9 +117,12 @@ header {
 .site-title-bar {
   overflow: hidden;
   height: 70px;
+  background: rgba(40, 153, 180, 0.39);
 }
 .page-title-bar.full-width {
-  background: #EFEFEF;
+  background: rgba(255, 151, 28, 0.7);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid white;
   padding: 0.5em 1em;
 }
 .page-title-bar h2 {
@@ -128,6 +138,23 @@ header {
 }
 .main {
   margin-top: 130px;
+}
+.recipe {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #fdfdfd;
+}
+.recipe:hover {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.toggle-recipe-info {
+  text-align: center;
+}
+.recipe-title {
+  text-align: center;
 }
 .recipe,
 .add-recipe-form {
