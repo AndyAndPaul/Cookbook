@@ -35,7 +35,7 @@
         if(ingredients[i].quantity.whole > 0) {
           whole = ingredients[i].quantity.whole;
         }
-        if(ingredients[i].quantity.numerator != 0 && ingredients[i].quantity.denominator != 0) {
+        if(ingredients[i].quantity.numerator && ingredients[i].quantity.denominator) {
           fraction = ingredients[i].quantity.numerator + '/' + ingredients[i].quantity.denominator;
         }
         %>
