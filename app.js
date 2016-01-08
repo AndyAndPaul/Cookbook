@@ -46,14 +46,14 @@ app
 
 .use(express.static('public'))
 
-.use(bodyParser.json())
+.use(bodyParser.json({limit: '5mb'}))
 .use(bodyParser.urlencoded({ extended: false }))
 
 .use('/', home)
 .use('/api', api)
 .use('/account', accounts);
 
-var server = app.listen(3737, function() {
+var server = app.listen(80, function() {
   var host = server.address().address;
   var port = server.address().port;
 
