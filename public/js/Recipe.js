@@ -47,7 +47,10 @@ app.RecipeView = Backbone.View.extend({
       closeOnConfirm: false
     },
     function(){
-      swal("Recipe deleted.");
+      swal({
+        title:"Recipe deleted.",
+        type: "success"
+      });
 
       that.url = '/api/recipe/' + app.cookbookId + '/' + that.model.attributes._id;
       $(that.el).remove();
