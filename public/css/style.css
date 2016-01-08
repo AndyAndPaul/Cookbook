@@ -11,6 +11,8 @@ article {
 html,
 body {
   background: #fcfcef;
+  background-image: url('/img/yellow-paper-texture.jpg');
+  background-repeat: repeat;
 }
 .mobile-hide {
   display: none;
@@ -121,7 +123,7 @@ header {
   background: rgba(40, 153, 180, 0.39);
 }
 .page-title-bar.full-width {
-  background: rgba(255, 151, 28, 0.7);
+  background: rgba(255, 171, 73, 0.7);
   box-shadow: 0 2px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid white;
   padding: 0.5em 1em;
@@ -141,7 +143,7 @@ header {
   margin-top: 130px;
 }
 .recipe {
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   box-sizing: border-box;
   margin: 0 auto 1em;
@@ -158,7 +160,7 @@ header {
   font-weight: 700;
 }
 .recipe:hover {
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .toggle-recipe-info {
@@ -217,7 +219,7 @@ li {
   padding: 1em;
 }
 .add-recipe-form {
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   margin: 0 auto 3em;
   background: #fdfdfd;

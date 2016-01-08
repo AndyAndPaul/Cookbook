@@ -1,5 +1,19 @@
-# Cookbook
+## Cookbook
 <hr>
+
+Cookbook is a simple and fun app that enables you to save and organize your recipes the way you want.
+
+Designed and programmed by Paul Vasich and Andrew Dushane
+
+### Dependencies
+* node.js
+* Express
+* MongoDB
+* jQuery
+* Backbone
+* FontAwesome
+* Sweetalert
+
 ### Wireframes
 ##### DB planning:
 <img src="wireframes/Database_layout.jpg"

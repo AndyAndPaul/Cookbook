@@ -1,6 +1,6 @@
 @main-background: #fcfcef;
 @content-background: #fdfdfd;
-@content-border: 2px solid rgba(0,0,0,0.3);
+@content-border: 1px solid rgba(0,0,0,0.3);
 @content-border-radius: 4px;
 
 *, body, div, header, footer, section, article {
@@ -10,6 +10,8 @@
 
 html, body {
   background: @main-background;
+  background-image: url('/img/yellow-paper-texture.jpg');
+  background-repeat: repeat;
 }
 
 .mobile-hide {
@@ -136,7 +138,7 @@ header {
 }
 
 .page-title-bar.full-width {
-  background: rgba(255, 151, 28, 0.7);
+  background: rgba(255, 171, 73, 0.7);
   box-shadow: 0 2px rgba(0,0,0,0.1);
   border-bottom: 1px solid white;
   padding: 0.5em 1em;
@@ -178,7 +180,7 @@ header {
   }
 }
 .recipe:hover {
-  border: 2px solid rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.4);
   box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
 }
 
