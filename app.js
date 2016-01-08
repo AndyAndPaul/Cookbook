@@ -13,6 +13,7 @@
 // declare passport and set up local strategy
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+require('dotenv').load();
 require('./db/database');
 
 var express    = require('express'),
@@ -53,7 +54,7 @@ app
 .use('/api', api)
 .use('/account', accounts);
 
-var server = app.listen(80, function() {
+var server = app.listen(process.env.SERVERPORT, function() {
   var host = server.address().address;
   var port = server.address().port;
 
