@@ -138,7 +138,7 @@ $(document).ready( function() {
   $('#add-recipe-button').on('click', function() {
     if(!($( "#add-recipe-form" ).length)) { // display the form if it's not already displayed
       var html = _.template($('#add-recipe-template').html());
-      $('#recipes-container').prepend(html);
+      $('#add-recipe-form-container').prepend(html);
       // scroll to form
       $('body, html').animate({ scrollTop: $("#add-recipe-form").offset().top -200 }, 1000);
       // instantiate Bakcbone view for form
