@@ -74,7 +74,8 @@ app.createRecipeView = Backbone.View.extend({
 
   },
   addIngredientLine: function() {
-    var html = _.template($('#add-ingredient-template').html());
+    active.ingredientNumber += 1;
+    var html = _.template($('#add-ingredient-template').html())({i: active.ingredientNumber});
     $('#add-ingredients-container').append(html);
   },
   addInstructionLine: function() {
@@ -102,11 +103,14 @@ app.createRecipeView = Backbone.View.extend({
     $(e.target).parent().remove();
     if(e.target.parentNode.className == 'single-instruction') {
       active.stepNumber -= 1;
+    } else if (e.target.parentNode.className == 'add-ingredient') {
+      active.ingredientNumber -= 1;
     }
   },
   initialize: function() {
     console.log('addRecipeView instantiated');
     active.stepNumber = 1;
+    active.ingredientNumber = 1;
   }
   // validateInput: function() {
   //   var inputs = this.$el.children('input');

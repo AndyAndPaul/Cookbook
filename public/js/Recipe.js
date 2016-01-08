@@ -89,7 +89,12 @@ app.RecipeList = Backbone.Collection.extend({
 })
 
 $(document).ready(function() {
+  
+  // fetch recipe list on page load
   active.recipeList = new app.RecipeList(app.cookbookId);
+  console.log('fetched recipe list');
+
+  // filter recipes by search
   $('#search').on('keyup', function(e) {
     console.log(active.recipeViews);
     var query = e.target.value;
@@ -101,9 +106,6 @@ $(document).ready(function() {
         $('#recipe_' + attrs._id).hide();
       }
     };
-    // var results = active.recipeList.filter(function(recipe) {
-    //   return(recipe.attributes.name.toLowerCase().search(query) != -1)
-    // });
   });
-  console.log('fetched recipe list');
+
 })

@@ -102,9 +102,9 @@
 
 <script type="text/template" id="add-ingredient-template">
   <div class="add-ingredient">
-    <input type="number" class="qty-whole" value="1"> &amp; <input type="number" class="qty-numerator" value="0">/<input type="number" class="qty-denominator" value="1">
+    <input type="number" class="qty-whole" value="1"> &amp; <input type="number" class="qty-numerator fraction">/<input type="number" class="qty-denominator fraction">
     <input type="text" class="unit" placeholder="Unit">
-    <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient clickable"></i><i class="fa fa-minus-circle clickable delete-input"></i><br>
+    <input type="text" class="ingredient-name" placeholder="Ingredient <%= i %>"> <i class="fa fa-plus-circle new-ingredient clickable"></i><i class="fa fa-minus-circle clickable delete-input"></i><br>
     Quantity
   </div>
 </script>
