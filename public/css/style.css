@@ -8,6 +8,9 @@ article {
   box-sizing: border-box;
   margin: 0;
 }
+.mobile-hide {
+  display: none;
+}
 h1,
 h2,
 h3,
@@ -126,7 +129,8 @@ header {
 .main {
   margin-top: 130px;
 }
-.recipe {
+.recipe,
+.add-recipe-form {
   margin: 0 auto 3em;
   max-width: 800px;
 }
@@ -209,4 +213,17 @@ li {
 }
 .recipe-info {
   display: none;
+}
+@media only screen and (min-width: 736px) {
+  .mobile-hide {
+    display: inherit;
+  }
+  #recipes-container {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .recipe {
+    width: 30%;
+  }
 }

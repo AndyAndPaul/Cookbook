@@ -16,7 +16,6 @@ var active = active || {};
 
 app.Recipe = Backbone.Model.extend({
   initialize: function() {
-    this.idAttribute = '_id';
   }
 });
 
@@ -30,6 +29,10 @@ app.RecipeView = Backbone.View.extend({
   template: _.template($('#recipe-template').html()),
 
   initialize: function() {
+    // this.el = document.createElement('article');
+    this.el.id = 'recipe_' + this.model.attributes._id;
+    this.el.className = 'recipe';
+    this.$el = $(this.el);
   },
 
   deleteRecipe: function(e) {
@@ -50,9 +53,10 @@ app.RecipeView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log('el?');
+    console.log(this);
     this.html = this.template(this.model.attributes);
     this.html = $(this.el).append(this.html);
-
     // call chaining
     return this;
   }
