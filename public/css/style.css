@@ -74,7 +74,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 99;
-  background: #FFF;
+  background: #fcfcef;
 }
 .main-navigation li {
   padding: 1em;
@@ -104,6 +104,7 @@ header {
   padding: 0.25em;
   border: 1px solid #666;
   border-radius: 5px;
+  margin-top: 0.25em;
 }
 .site-title {
   width: 50%;
@@ -143,8 +144,18 @@ header {
   border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   box-sizing: border-box;
-  padding: 5px;
+  margin: 0 auto 1em;
+  padding: 1em;
   background: #fdfdfd;
+  counter-reset: ingredient-counter;
+}
+.recipe ol li:before {
+  content: counter(ingredient-counter);
+  counter-increment: ingredient-counter;
+  font-size: 0.75em;
+  color: #000;
+  margin-right: 0.5em;
+  font-weight: 700;
 }
 .recipe:hover {
   border: 2px solid rgba(0, 0, 0, 0.4);
@@ -155,10 +166,6 @@ header {
 }
 .recipe-title {
   text-align: center;
-}
-.recipe,
-.add-recipe-form {
-  margin: 0 auto 3em;
 }
 .featured-image {
   width: 100%;
@@ -192,7 +199,8 @@ header {
 .three-quarter-right {
   float: right;
 }
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0 0 0 20px;
 }
@@ -209,8 +217,11 @@ li {
   padding: 1em;
 }
 .add-recipe-form {
-  padding-bottom: 1em;
-  border-bottom: 1px solid #EFEFEF;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 0 auto 3em;
+  background: #fdfdfd;
+  padding: 2em;
 }
 .add-recipe-form input,
 .add-recipe-form button {
@@ -225,6 +236,9 @@ li {
   width: 5em;
 }
 .add-recipe-form .add-ingredient input[type=number] {
+  width: 3.5em;
+}
+.add-recipe-form .add-ingredient input[type=number].fraction {
   width: 3em;
 }
 .add-recipe-form .add-instruction {
@@ -257,8 +271,8 @@ li {
     width: 32%;
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1600px) {
   .recipe {
-    width: 24%;
+    width: 19%;
   }
 }

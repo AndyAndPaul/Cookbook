@@ -53,11 +53,11 @@
       <% } %>
     </ul>
     <h4>Cooking instructions</h4>
-    <ul>
+    <ol class="instsruction-list">
       <% for( var i = 0; i < instructions.length; i++ ) { %>
         <li><%= instructions[i] %></li>
       <% } %>
-    </ul>
+    </ol>
     <div class="column-wrapper">
       <div class="left-element"><button class="update-recipe">Update</button></div>
       <div class="right-element text-right"><button class="delete-recipe" id="delete_<%= _id %>">Delete</button></div>
@@ -76,7 +76,7 @@
     <div id="add-ingredients-container">
       <div class="add-ingredient">
         <input type="number" class="qty-whole" value="1"> &amp;
-          <input type="number" class="qty-numerator" value="0">/<input type="number" class="qty-denominator" value="1">
+          <input type="number" class="qty-numerator fraction">/<input type="number" class="qty-denominator fraction">
         <input type="text" class="unit" placeholder="Unit">
         <input type="text" class="ingredient-name" placeholder="Ingredient 1"> <i class="fa fa-plus-circle new-ingredient clickable"></i><br>
         Quantity

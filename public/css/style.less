@@ -1,10 +1,15 @@
+@main-background: #fcfcef;
+@content-background: #fdfdfd;
+@content-border: 2px solid rgba(0,0,0,0.3);
+@content-border-radius: 4px;
+
 *, body, div, header, footer, section, article {
   box-sizing: border-box;
   margin: 0;
 }
 
 html, body {
-  background: #fcfcef;
+  background: @main-background;
 }
 
 .mobile-hide {
@@ -76,7 +81,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 99;
-  background: #FFF;
+  background: @main-background;
 }
 
 .main-navigation li {
@@ -110,6 +115,7 @@ header {
   padding: 0.25em;
   border: 1px solid #666;
   border-radius: 5px;
+  margin-top: 0.25em;
 }
 
 .site-title {
@@ -155,11 +161,21 @@ header {
 }
 
 .recipe {
-  border: 2px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
+  border: @content-border;
+  border-radius: @content-border-radius;
   box-sizing: border-box;
-  padding: 5px;
-  background: #fdfdfd;
+  margin: 0 auto 1em;
+  padding: 1em;
+  background: @content-background;
+  counter-reset: ingredient-counter;
+  ol li:before {
+  	content: counter(ingredient-counter);
+  	counter-increment: ingredient-counter;
+    font-size: 0.75em;
+    color: #000;
+    margin-right: 0.5em;
+    font-weight: 700;
+  }
 }
 .recipe:hover {
   border: 2px solid rgba(0,0,0,0.4);
@@ -172,10 +188,6 @@ header {
 
 .recipe-title {
   text-align: center;
-}
-
-.recipe, .add-recipe-form {
-  margin: 0 auto 3em;
 }
 
 .featured-image {
@@ -211,7 +223,7 @@ header {
   float: right;
 }
 
-ul {
+ul, ol {
   margin: 0;
   padding: 0 0 0 20px;
 }
@@ -232,8 +244,11 @@ li {
 }
 
 .add-recipe-form {
-  padding-bottom: 1em;
-  border-bottom: 1px solid #EFEFEF;
+  border: @content-border;
+  border-radius: @content-border-radius;
+  margin: 0 auto 3em;
+  background: @content-background;
+  padding: 2em;
   input, button {
     padding: 0.5em;
     margin-bottom: 0.25em;
@@ -245,6 +260,9 @@ li {
     width: 5em;
   }
   .add-ingredient input[type=number] {
+    width: 3.5em;
+  }
+  .add-ingredient input[type=number].fraction {
     width: 3em;
   }
   .add-instruction {
@@ -280,8 +298,8 @@ li {
     width: 32%;
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1600px) {
   .recipe {
-    width: 24%;
+    width: 19%;
   }
 }
