@@ -4,7 +4,7 @@
 
   Last edited
     by andy-j-d
-    on 1/6/2016
+    on 1/7/2016
 
   TODO:
 
@@ -61,10 +61,13 @@ app.createRecipeView = Backbone.View.extend({
     // this.collection.url = '/api/recipe/' + app.cookbookId;
     this.collection.create(recipe, {
       success: function(recipe) {
+        active.recipeViews = active.recipeViews || {};
         $('#add-recipe-form').remove();
         var events = {};
-        events["click button#delete_"+recipe.attributes._id] = "deleteRecipe";
-        active.CookbookView.$el.prepend(new app.RecipeView( { model: recipe, events } ).render().html);
+        events['click button#delete_' + recipe.attributes._id] = 'deleteRecipe';
+        events['click .toggle-recipe-info'] = 'toggleRecipeInfo';
+        active.recipeViews['view_' + recipe.attributes._id] = new app.RecipeView( { model: recipe, events } );
+        active.CookbookView.$el.prepend(active.recipeViews['view_' + recipe.attributes._id].render().html);
         active.recipeImage = false;
       }
     });
@@ -135,7 +138,7 @@ $(document).ready( function() {
   $('#add-recipe-button').on('click', function() {
     if(!($( "#add-recipe-form" ).length)) { // display the form if it's not already displayed
       var html = _.template($('#add-recipe-template').html());
-      $('#recipes-container').prepend(html);
+      $('#add-recipe-form-container').prepend(html);
       // scroll to form
       $('body, html').animate({ scrollTop: $("#add-recipe-form").offset().top -200 }, 1000);
       // instantiate Bakcbone view for form

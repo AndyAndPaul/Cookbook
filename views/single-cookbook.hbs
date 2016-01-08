@@ -1,6 +1,10 @@
 {{! Cookbook/views/single-cookbook.hbs
     Partial for a single cookbook view }}
 
+<div id="add-recipe-form-container">
+
+</div>
+
 <div id="recipes-container">
 
 </div>
@@ -9,11 +13,11 @@
   app.cookbookId = "{{cookbookId}}";
 </script>
 <script type="text/template" id="recipe-template">
-  <article class="recipe" id="recipe_<%= _id %>">
-    <% if(image) { %>
-      <img src="<%= image %>" alt="<%= name %>">
-    <% } %>
-    <h3><%= name %></h3>
+  <% if(image) { %>
+    <img src="<%= image %>" alt="<%= name %>" class="toggle-recipe-info clickable">
+  <% } %>
+  <h3 class="toggle-recipe-info clickable"><%= name %></h3>
+  <div class="recipe-info" id="info_<%= _id %>">
     <div class="column-wrapper">
       <div class="left-element"><strong>Prep Time: </strong> <%= prepTime %> minutes</div>
       <div class="right-element"><strong>Cook Time: </strong> <%= cookTime %> minutes</div>
@@ -58,11 +62,12 @@
       <div class="left-element"><button class="update-recipe">Update</button></div>
       <div class="right-element text-right"><button class="delete-recipe" id="delete_<%= _id %>">Delete</button></div>
     </div>
-  </article>
+  </div>
+
 </script>
 
 <script type="text/template" id="add-recipe-template">
-  <article id="add-recipe-form" class="recipe add-recipe-form">
+  <article id="add-recipe-form" class="add-recipe-form">
     <h3>Create a New Recipe</h3>
     <input type="text" id="recipe-name" class="recipe-name" placeholder="Recipe Name">
     <input type="number" id="prep-time" placeholder="Prep Time">
