@@ -89,7 +89,7 @@ app.RecipeList = Backbone.Collection.extend({
 })
 
 $(document).ready(function() {
-  
+
   // fetch recipe list on page load
   active.recipeList = new app.RecipeList(app.cookbookId);
   console.log('fetched recipe list');

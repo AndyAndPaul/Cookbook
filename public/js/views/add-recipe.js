@@ -3,8 +3,8 @@
     Backbone Recipe creation
 
   Last edited
-    by andy-j-d
-    on 1/7/2016
+    by pavasich
+    on 1/9/2016
 
   TODO:
 
@@ -69,9 +69,14 @@ app.createRecipeView = Backbone.View.extend({
         active.recipeViews['view_' + recipe.attributes._id] = new app.RecipeView( { model: recipe, events } );
         active.CookbookView.$el.prepend(active.recipeViews['view_' + recipe.attributes._id].render().html);
         active.recipeImage = false;
+
+        // Pretty "Recipe created!" message
+        swal({
+          title: "Recipe created!",
+          type: "success"
+        });
       }
     });
-
   },
   addIngredientLine: function() {
     active.ingredientNumber += 1;

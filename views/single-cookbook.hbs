@@ -29,14 +29,17 @@
         var whole = false;
         var fraction = false;
         // add an s if the qty is plural and unit doesn't end in s
-        if(ingredients[i].quantity.whole > 1 && ingredients[i].unit.slice(-1) != 's') {
+        if(ingredients[i].quantity.whole > 1 &&
+           ingredients[i].unit.slice(-1) != 's') {
           plural = 's';
         }
         if(ingredients[i].quantity.whole > 0) {
           whole = ingredients[i].quantity.whole;
         }
-        if(ingredients[i].quantity.numerator && ingredients[i].quantity.denominator) {
-          fraction = ingredients[i].quantity.numerator + '/' + ingredients[i].quantity.denominator;
+        if(ingredients[i].quantity.numerator &&
+           ingredients[i].quantity.denominator) {
+          fraction = ingredients[i].quantity.numerator + '/' +
+                     ingredients[i].quantity.denominator;
         }
         %>
         <li>
