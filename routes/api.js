@@ -42,9 +42,11 @@ router
 
     if (err) res.json(err);
 
-    else res.json(cookbook);
-
-  })
+    else if (!cookbook)
+      res.redirect('/error');
+    else if (!cookbook.recipes)
+      res.redirect('/error');
+    })
 })
 
 //                                                              POST
@@ -135,6 +137,14 @@ router
   model.findById(req.params.cookbookId, function(err, cookbook) {
 
     if (err) res.json(err)
+    else if (!cookbook) {
+      console.log('no cookbook, redirecting to /error')
+      res.redirect(500, '/error')
+    }
+    else if (!cookbook.recipes) {
+      console.log('no recipes, redirecting to /error')
+      res.redirect(500, '/error')
+    }
 
     else res.json(cookbook.recipes)
 

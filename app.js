@@ -52,7 +52,11 @@ app
 
 .use('/', home)
 .use('/api', api)
-.use('/account', accounts);
+.use('/account', accounts)
+
+.use('*', function(req,res) {
+  res.redirect('/not-found')
+})
 
 var server = app.listen(process.env.SERVERPORT, function() {
   var host = server.address().address;

@@ -1,3 +1,29 @@
+@font-face {
+  font-family: 'Poiret One';
+  src: url('fonts/PoiretOne-Regular.tff') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Serif';
+  src: url('fonts/DroidSerif.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Serif bold';
+  src: url('fonts/DroidSerif-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Serif italic';
+  src: url('fonts/DroidSerif-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Serif bold italic';
+  src: url('fonts/DroidSerif-BoldItalic.ttf') format('truetype');
+}
+
+@font: 'Droid Serif';
+@bold: "@{font} bold";
+@italic: "@{font} italic";
+@bold-italic: "@{bold} italic";
+
 @main-background: #fcfcef;
 @content-background: #fdfdfd;
 @content-border: 1px solid rgba(0,0,0,0.3);
@@ -6,6 +32,7 @@
 *, body, div, header, footer, section, article {
   box-sizing: border-box;
   margin: 0;
+  font-family: @font;
 }
 
 html, body {
@@ -20,6 +47,19 @@ html, body {
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0.25em 0;
+}
+
+.message-banner {
+  text-align: center;
+  font-size: 2.3em;
+  letter-spacing: 1px;
+  margin: 10% auto;
+}
+
+h3 {
+  font-family: 'Poiret One';
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 img {
@@ -46,6 +86,10 @@ button {
 
 button:hover {
   background: #DFDFDF;
+}
+
+.bold {
+  font-family: @bold;
 }
 
 .clickable {
@@ -98,6 +142,12 @@ header {
   margin-top: 0.125em;
 }
 
+#page-title {
+  font-family: @font;
+  font-weight: normal;
+  font-style: normal;
+}
+
 .fa-search, .fa-bars {
   cursor: pointer;
 }
@@ -128,6 +178,7 @@ header {
 
 .site-title h1 {
   font-family: 'Poiret One', cursive;
+  letter-spacing: 1px;
   margin: 0;
 }
 
